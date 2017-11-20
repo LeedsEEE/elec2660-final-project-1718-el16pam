@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		773C12201FBB419F00FF77B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C121F1FBB419F00FF77B9 /* main.m */; };
 		773C12231FBB419F00FF77B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12221FBB419F00FF77B9 /* AppDelegate.m */; };
-		773C12261FBB419F00FF77B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12251FBB419F00FF77B9 /* ViewController.m */; };
+		773C12261FBB419F00FF77B9 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12251FBB419F00FF77B9 /* HomeScreenViewController.m */; };
 		773C12291FBB419F00FF77B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773C12271FBB419F00FF77B9 /* Main.storyboard */; };
 		773C122B1FBB419F00FF77B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773C122A1FBB419F00FF77B9 /* Assets.xcassets */; };
 		773C122E1FBB419F00FF77B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773C122C1FBB419F00FF77B9 /* LaunchScreen.storyboard */; };
 		773C12391FBB41A000FF77B9 /* Whack_a_moleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12381FBB41A000FF77B9 /* Whack_a_moleTests.m */; };
 		773C12441FBB41A000FF77B9 /* Whack_a_moleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12431FBB41A000FF77B9 /* Whack_a_moleUITests.m */; };
+		778B48F31FC30B0A00C2C8C7 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */; };
+		778B48F61FC30B2600C2C8C7 /* SettingsScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */; };
+		778B48F91FC30CAE00C2C8C7 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F81FC30CAE00C2C8C7 /* Time.m */; };
+		778B48FC1FC30CC000C2C8C7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FB1FC30CC000C2C8C7 /* Score.m */; };
+		778B48FF1FC30CD200C2C8C7 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FE1FC30CD200C2C8C7 /* Music.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,8 @@
 		773C121F1FBB419F00FF77B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		773C12211FBB419F00FF77B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		773C12221FBB419F00FF77B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		773C12241FBB419F00FF77B9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		773C12251FBB419F00FF77B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		773C12241FBB419F00FF77B9 /* HomeScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		773C12251FBB419F00FF77B9 /* HomeScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
 		773C12281FBB419F00FF77B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		773C122A1FBB419F00FF77B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		773C122D1FBB419F00FF77B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,16 @@
 		773C123F1FBB41A000FF77B9 /* Whack-a-moleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Whack-a-moleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		773C12431FBB41A000FF77B9 /* Whack_a_moleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whack_a_moleUITests.m; sourceTree = "<group>"; };
 		773C12451FBB41A000FF77B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		778B48F11FC30B0A00C2C8C7 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
+		778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
+		778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScreenViewController.h; sourceTree = "<group>"; };
+		778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScreenViewController.m; sourceTree = "<group>"; };
+		778B48F71FC30CAE00C2C8C7 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
+		778B48F81FC30CAE00C2C8C7 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		778B48FA1FC30CC000C2C8C7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		778B48FB1FC30CC000C2C8C7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		778B48FD1FC30CD200C2C8C7 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		778B48FE1FC30CD200C2C8C7 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +118,19 @@
 			children = (
 				773C12211FBB419F00FF77B9 /* AppDelegate.h */,
 				773C12221FBB419F00FF77B9 /* AppDelegate.m */,
-				773C12241FBB419F00FF77B9 /* ViewController.h */,
-				773C12251FBB419F00FF77B9 /* ViewController.m */,
+				778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */,
+				778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */,
+				778B48F11FC30B0A00C2C8C7 /* GameScreenViewController.h */,
+				778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */,
+				773C12241FBB419F00FF77B9 /* HomeScreenViewController.h */,
+				773C12251FBB419F00FF77B9 /* HomeScreenViewController.m */,
 				773C12271FBB419F00FF77B9 /* Main.storyboard */,
+				778B48F71FC30CAE00C2C8C7 /* Time.h */,
+				778B48F81FC30CAE00C2C8C7 /* Time.m */,
+				778B48FA1FC30CC000C2C8C7 /* Score.h */,
+				778B48FB1FC30CC000C2C8C7 /* Score.m */,
+				778B48FD1FC30CD200C2C8C7 /* Music.h */,
+				778B48FE1FC30CD200C2C8C7 /* Music.m */,
 				773C122A1FBB419F00FF77B9 /* Assets.xcassets */,
 				773C122C1FBB419F00FF77B9 /* LaunchScreen.storyboard */,
 				773C122F1FBB419F00FF77B9 /* Info.plist */,
@@ -273,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773C12261FBB419F00FF77B9 /* ViewController.m in Sources */,
+				773C12261FBB419F00FF77B9 /* HomeScreenViewController.m in Sources */,
+				778B48F61FC30B2600C2C8C7 /* SettingsScreenViewController.m in Sources */,
+				778B48F91FC30CAE00C2C8C7 /* Time.m in Sources */,
+				778B48FF1FC30CD200C2C8C7 /* Music.m in Sources */,
 				773C12231FBB419F00FF77B9 /* AppDelegate.m in Sources */,
+				778B48FC1FC30CC000C2C8C7 /* Score.m in Sources */,
+				778B48F31FC30B0A00C2C8C7 /* GameScreenViewController.m in Sources */,
 				773C12201FBB419F00FF77B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +537,7 @@
 				773C124A1FBB41A000FF77B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		773C124B1FBB41A000FF77B9 /* Build configuration list for PBXNativeTarget "Whack-a-moleTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +546,7 @@
 				773C124D1FBB41A000FF77B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		773C124E1FBB41A000FF77B9 /* Build configuration list for PBXNativeTarget "Whack-a-moleUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +555,7 @@
 				773C12501FBB41A000FF77B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,13 +6,13 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface ViewController ()
+#import "HomeScreenViewController.h"
+#import "SettingsScreenViewController.h"
+@interface HomeScreenViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HomeScreenViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,5 +25,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)SettingButtonPressed:(UIButton *)sender {
+    
+    
+    
+}
+- (void)performSegueWithIdentifier:(NSString *)ShowSettingsScreen sender:(UIButton*)SettingButtonPressed;{
+}
+    
 
+
+- (IBAction)GameButtonPressed:(UIButton *)sender {
+}
 @end
