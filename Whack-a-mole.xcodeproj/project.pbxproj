@@ -20,6 +20,8 @@
 		778B48F91FC30CAE00C2C8C7 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F81FC30CAE00C2C8C7 /* Time.m */; };
 		778B48FC1FC30CC000C2C8C7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FB1FC30CC000C2C8C7 /* Score.m */; };
 		778B48FF1FC30CD200C2C8C7 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FE1FC30CD200C2C8C7 /* Music.m */; };
+		7796D95E1FC48CDD009CC8DB /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 7796D95D1FC48CDD009CC8DB /* Images */; };
+		7796D9601FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7796D95F1FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		778B48FB1FC30CC000C2C8C7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		778B48FD1FC30CD200C2C8C7 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		778B48FE1FC30CD200C2C8C7 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		7796D95D1FC48CDD009CC8DB /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		7796D95F1FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check_mark_u2713_icon_256x256.png; path = Images/check_mark_u2713_icon_256x256.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,9 @@
 				778B48FE1FC30CD200C2C8C7 /* Music.m */,
 				773C122A1FBB419F00FF77B9 /* Assets.xcassets */,
 				773C122C1FBB419F00FF77B9 /* LaunchScreen.storyboard */,
+				7796D95F1FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png */,
 				773C122F1FBB419F00FF77B9 /* Info.plist */,
+				7796D95D1FC48CDD009CC8DB /* Images */,
 				773C121E1FBB419F00FF77B9 /* Supporting Files */,
 			);
 			path = "Whack-a-mole";
@@ -271,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7796D95E1FC48CDD009CC8DB /* Images in Resources */,
+				7796D9601FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png in Resources */,
 				773C122E1FBB419F00FF77B9 /* LaunchScreen.storyboard in Resources */,
 				773C122B1FBB419F00FF77B9 /* Assets.xcassets in Resources */,
 				773C12291FBB419F00FF77B9 /* Main.storyboard in Resources */,

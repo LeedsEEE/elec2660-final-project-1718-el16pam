@@ -7,8 +7,18 @@
 //
 
 #import "Time.h"
+#import "SettingsScreenViewController.h"
 
 @implementation Time
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+
+    }
+    return self;
+}
 
 @end

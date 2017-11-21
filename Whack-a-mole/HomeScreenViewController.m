@@ -27,14 +27,16 @@
 
 - (IBAction)SettingButtonPressed:(UIButton *)sender {
     
-    
+    [self performSegueWithIdentifier:@"ShowSettingsScreen" sender:self];
+    // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
     
 }
-- (void)performSegueWithIdentifier:(NSString *)ShowSettingsScreen sender:(UIButton*)SettingButtonPressed;{
-}
-    
 
 
 - (IBAction)GameButtonPressed:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:@"ShowGameScreen" sender:self];
+    // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
+    
 }
 @end

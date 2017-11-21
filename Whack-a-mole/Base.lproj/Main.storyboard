@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -100,24 +100,14 @@
                                     <action selector="HardButtonPressed:" destination="aEG-35-h61" eventType="touchUpInside" id="Mc4-5v-h20"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-vN-oJ8">
-                                <frame key="frameInset" minX="108" minY="390" width="46" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Gz-vN-oJ8" secondAttribute="height" multiplier="23:22" id="3Ol-4a-J8z"/>
-                                    <constraint firstAttribute="width" constant="46" id="S1k-t9-cyM"/>
-                                    <constraint firstAttribute="height" constant="44" id="fys-Rg-iqq"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-yu-KC7">
-                                <frame key="frameInset" minX="108" minY="470" width="46" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-yu-KC7">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1J5-zP-AUd"/>
                                     <constraint firstAttribute="width" secondItem="1gX-yu-KC7" secondAttribute="height" multiplier="23:22" id="55P-JD-bQP"/>
                                     <constraint firstAttribute="width" constant="46" id="DPj-oa-MYw"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-wz-ZMG">
-                                <frame key="frameInset" minX="108" minY="550" width="46" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-wz-ZMG">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MMJ-wz-ZMG" secondAttribute="height" multiplier="23:22" id="0NQ-Ka-zbh"/>
                                     <constraint firstAttribute="height" constant="44" id="Pwn-kl-gBh"/>
@@ -126,35 +116,46 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-Wk-CdF">
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="BackToStartButton:" destination="aEG-35-h61" eventType="touchUpInside" id="TzA-Jz-5UB"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKG-XK-etX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-vN-oJ8">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Gz-vN-oJ8" secondAttribute="height" multiplier="23:22" id="3Ol-4a-J8z"/>
+                                    <constraint firstAttribute="width" constant="46" id="S1k-t9-cyM"/>
+                                    <constraint firstAttribute="height" constant="44" id="fys-Rg-iqq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IKG-XK-etX" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="275" id="2lb-NU-Zbf"/>
                             <constraint firstItem="BKb-nV-hvd" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="4MF-pa-EzA"/>
-                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="BKb-nV-hvd" secondAttribute="bottom" constant="80" id="C26-Ld-Ve8"/>
                             <constraint firstItem="1gX-yu-KC7" firstAttribute="centerY" secondItem="GyD-Wj-goG" secondAttribute="centerY" id="CKr-5O-2SR"/>
-                            <constraint firstItem="Ga0-aE-ajh" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="30" id="DAl-zc-BL5"/>
+                            <constraint firstItem="Ga0-aE-ajh" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="25" id="DAl-zc-BL5"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerY" secondItem="Rfy-EG-w0S" secondAttribute="centerY" id="FYy-sm-vCB"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerX" secondItem="1gX-yu-KC7" secondAttribute="centerX" id="FxN-gL-hS2"/>
                             <constraint firstItem="MMJ-wz-ZMG" firstAttribute="centerY" secondItem="BKb-nV-hvd" secondAttribute="centerY" id="JR1-rX-OXW"/>
-                            <constraint firstItem="iyp-9L-u3r" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="65" id="NdU-pz-ecG"/>
+                            <constraint firstItem="iyp-9L-u3r" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="55" id="NdU-pz-ecG"/>
                             <constraint firstItem="J1J-g0-MXs" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="Nvh-dS-59C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iyp-9L-u3r" secondAttribute="trailing" constant="-16" id="OmT-yi-r3q"/>
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="Qtl-ia-pBz"/>
+                            <constraint firstItem="IKG-XK-etX" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="RCO-JB-qxq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="y4w-Wk-CdF" secondAttribute="leading" id="WNh-xK-1Ua"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="leading" secondItem="1Gz-vN-oJ8" secondAttribute="trailing" constant="20" id="Xls-8u-FBg"/>
                             <constraint firstItem="iyp-9L-u3r" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="YGW-M6-NHX"/>
                             <constraint firstItem="1gX-yu-KC7" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="ZYQ-5Z-DHb"/>
+                            <constraint firstItem="Rfy-EG-w0S" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="25" id="cWi-da-peP"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="cdD-qg-Mh5"/>
-                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="GyD-Wj-goG" secondAttribute="bottom" constant="160" id="cqb-8B-OBo"/>
-                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="Rfy-EG-w0S" secondAttribute="bottom" constant="240" id="f0B-3T-dWB"/>
                             <constraint firstItem="Ga0-aE-ajh" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="fS3-wt-yJT"/>
+                            <constraint firstItem="BKb-nV-hvd" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="175" id="q03-bA-WXg"/>
+                            <constraint firstItem="GyD-Wj-goG" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="100" id="rMY-Kq-Nl5"/>
                             <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="y4w-Wk-CdF" secondAttribute="bottom" constant="10" id="vdx-1j-3hB"/>
+                            <constraint firstItem="J1J-g0-MXs" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="325" id="wIr-dc-ZtH"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="xgK-so-brm"/>
-                            <constraint firstItem="J1J-g0-MXs" firstAttribute="top" secondItem="iyp-9L-u3r" secondAttribute="bottom" constant="30" id="y6d-WO-ZSY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e5q-hx-oQ1"/>
@@ -165,6 +166,7 @@
                         <outlet property="TickNormalImage" destination="1gX-yu-KC7" id="LRJ-XC-tKR"/>
                         <outlet property="TimeLabel" destination="Ga0-aE-ajh" id="KvF-8D-gqS"/>
                         <outlet property="TimePickerView" destination="iyp-9L-u3r" id="WRG-5L-JSh"/>
+                        <outlet property="TimeSelectedLabel" destination="IKG-XK-etX" id="5o2-QZ-rOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hy-RJ-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,9 +280,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otk-BB-waN">
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="BackToStartPressed:" destination="t9k-CI-cZH" eventType="touchUpInside" id="ies-ep-KTR"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-0m-xO1">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -322,7 +321,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="ySS-oW-6iS"/>
                     <connections>
-                        <outlet property="BackToStartPressed" destination="Otk-BB-waN" id="maN-pY-aNV"/>
                         <outlet property="HighestScoreLabel" destination="8JE-0m-xO1" id="K48-dL-dB6"/>
                         <outlet property="Mole1Button" destination="PnK-bC-vzc" id="hMn-0I-VS0"/>
                         <outlet property="Mole2Button" destination="Fgh-Xf-vua" id="0j8-I3-CB0"/>
@@ -343,4 +341,7 @@
             <point key="canvasLocation" x="1224.8" y="-400.74962518740631"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check_mark_u2713_icon_256x256.png" width="256" height="256"/>
+    </resources>
 </document>

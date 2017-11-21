@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Time.h"
+#import "Score.h"
 
 @interface GameScreenViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *TimeLeftLabel;

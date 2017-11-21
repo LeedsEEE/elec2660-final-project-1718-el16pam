@@ -10,7 +10,7 @@
 
 @interface Time : NSObject
 
-@property int time;
+@property float timeselected;
 @property int timeRemaining;
 @property float timeMoleShowed;
 @property float timeMoleHidden;
