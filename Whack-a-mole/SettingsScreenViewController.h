@@ -10,6 +10,7 @@
 #import "Time.h"
 @interface SettingsScreenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
+
 @property (weak, nonatomic) IBOutlet UILabel *TimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DifficultyLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *TimePickerView;
@@ -24,6 +25,7 @@
 @property  NSInteger FirstSignificantFigure;
 @property  NSInteger SecondSignificantFigure;
 @property  NSInteger ThirdSignificantFigure;
+@property (nonatomic, strong) NSString *difficulty;
 
 - (IBAction)EasyButtonPressed:(UIButton *)sender;
 - (IBAction)NormalButtonPressed:(UIButton *)sender;

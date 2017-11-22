@@ -50,7 +50,7 @@
 
 #pragma mark PikerView Delegate Methods
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
+- (NSString *)pickerView:(UIPickerView *)pickerView                                                                             //Sets the number in each row equal to the row number
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component;{
     
@@ -64,13 +64,13 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component;{
     
-    self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:0];
-    self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:1];
-    self.ThirdSignificantFigure = [self.TimePickerView selectedRowInComponent:2];
+    self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:0];                                               //Gets the first significant figure of the time from the picker
+    self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:1];                                              //Gets the second significant figure of the time from the picker
+    self.ThirdSignificantFigure = [self.TimePickerView selectedRowInComponent:2];                                               //Gets the third significant figure of the time from the picker
     
-    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;
+    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
     
-    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];
+    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];                          //Displays the Time Selected
     
 }
 
@@ -82,7 +82,7 @@
     
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView
+- (NSInteger)pickerView:(UIPickerView *)pickerView                                                                              //Sets the number of rows for each component
 numberOfRowsInComponent:(NSInteger)component;{
     
     if (component == 0) {
@@ -100,14 +100,37 @@ numberOfRowsInComponent:(NSInteger)component;{
 }
 
 - (IBAction)EasyButtonPressed:(UIButton *)sender {
+    
+    self.TickEasyImage.hidden = false;                                                                                          //Shows the tick next to the Easy button
+    self.TickNormalImage.hidden = true;                                                                                         //Hides the tick next to the Normal Button
+    self.TickHardImage.hidden = true;                                                                                           //Hides the tick next to the Hard Button
+    
+    self.difficulty = @"Easy";                                                                                                  //Sets the difficulty variable to "Easy"
+    
 }
 
 - (IBAction)NormalButtonPressed:(UIButton *)sender {
+    
+    self.TickEasyImage.hidden = true;                                                                                           //Hides the tick next to the Easy button
+    self.TickNormalImage.hidden = false;                                                                                        //Shows the tick next to the Normal button
+    self.TickHardImage.hidden = true;                                                                                           //Hides the tick next to the Hard button
+    
+    self.difficulty = @"Normal";                                                                                                //Sets the difficulty variable to "Normal"
+    
 }
 
 - (IBAction)HardButtonPressed:(UIButton *)sender {
+    
+    self.TickEasyImage.hidden = true;                                                                                           //Hides the tick next to the Easy button
+    self.TickNormalImage.hidden = true;                                                                                         //Hides the tick next to the Normal button
+    self.TickHardImage.hidden = false;                                                                                          //Shows the tick next to the Hard button
+    
+    self.difficulty = @"Hard";                                                                                                  //Sets the difficulty variable to "Hard"
+    
 }
 
 - (IBAction)BackToStartButton:(UIButton *)sender {
 }
+
 @end
+

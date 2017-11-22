@@ -35,4 +35,7 @@
 - (IBAction)Mole8Pressed:(UIButton *)sender;
 - (IBAction)Mole9Pressed:(UIButton *)sender;
 - (IBAction)BackToStartPressed:(UIButton *)sender;
+
+@property (strong, nonatomic) Time *time;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SettingsScreenViewController.h"
 
 @interface Time : NSObject
 
@@ -15,5 +16,6 @@
 @property float timeMoleShowed;
 @property float timeMoleHidden;
 
+@property (nonatomic) SettingsScreenViewController *ssvc;
 
 @end
