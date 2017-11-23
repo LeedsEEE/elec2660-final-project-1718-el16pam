@@ -17,8 +17,8 @@
 		773C12441FBB41A000FF77B9 /* Whack_a_moleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12431FBB41A000FF77B9 /* Whack_a_moleUITests.m */; };
 		778B48F31FC30B0A00C2C8C7 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */; };
 		778B48F61FC30B2600C2C8C7 /* SettingsScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */; };
-		778B48F91FC30CAE00C2C8C7 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F81FC30CAE00C2C8C7 /* Time.m */; };
-		778B48FC1FC30CC000C2C8C7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FB1FC30CC000C2C8C7 /* Score.m */; };
+		778B48F91FC30CAE00C2C8C7 /* TimeDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F81FC30CAE00C2C8C7 /* TimeDataClass.m */; };
+		778B48FC1FC30CC000C2C8C7 /* ScoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FB1FC30CC000C2C8C7 /* ScoreDataClass.m */; };
 		778B48FF1FC30CD200C2C8C7 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48FE1FC30CD200C2C8C7 /* Music.m */; };
 		7796D95E1FC48CDD009CC8DB /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 7796D95D1FC48CDD009CC8DB /* Images */; };
 		7796D9601FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7796D95F1FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png */; };
@@ -62,10 +62,10 @@
 		778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScreenViewController.h; sourceTree = "<group>"; };
 		778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScreenViewController.m; sourceTree = "<group>"; };
-		778B48F71FC30CAE00C2C8C7 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
-		778B48F81FC30CAE00C2C8C7 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
-		778B48FA1FC30CC000C2C8C7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
-		778B48FB1FC30CC000C2C8C7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		778B48F71FC30CAE00C2C8C7 /* TimeDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDataClass.h; sourceTree = "<group>"; };
+		778B48F81FC30CAE00C2C8C7 /* TimeDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDataClass.m; sourceTree = "<group>"; };
+		778B48FA1FC30CC000C2C8C7 /* ScoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDataClass.h; sourceTree = "<group>"; };
+		778B48FB1FC30CC000C2C8C7 /* ScoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDataClass.m; sourceTree = "<group>"; };
 		778B48FD1FC30CD200C2C8C7 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		778B48FE1FC30CD200C2C8C7 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
 		7796D95D1FC48CDD009CC8DB /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
@@ -122,17 +122,17 @@
 			children = (
 				773C12211FBB419F00FF77B9 /* AppDelegate.h */,
 				773C12221FBB419F00FF77B9 /* AppDelegate.m */,
-				778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */,
-				778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */,
 				778B48F11FC30B0A00C2C8C7 /* GameScreenViewController.h */,
 				778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */,
 				773C12241FBB419F00FF77B9 /* HomeScreenViewController.h */,
 				773C12251FBB419F00FF77B9 /* HomeScreenViewController.m */,
 				773C12271FBB419F00FF77B9 /* Main.storyboard */,
-				778B48F71FC30CAE00C2C8C7 /* Time.h */,
-				778B48F81FC30CAE00C2C8C7 /* Time.m */,
-				778B48FA1FC30CC000C2C8C7 /* Score.h */,
-				778B48FB1FC30CC000C2C8C7 /* Score.m */,
+				778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */,
+				778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */,
+				778B48F71FC30CAE00C2C8C7 /* TimeDataClass.h */,
+				778B48F81FC30CAE00C2C8C7 /* TimeDataClass.m */,
+				778B48FA1FC30CC000C2C8C7 /* ScoreDataClass.h */,
+				778B48FB1FC30CC000C2C8C7 /* ScoreDataClass.m */,
 				778B48FD1FC30CD200C2C8C7 /* Music.h */,
 				778B48FE1FC30CD200C2C8C7 /* Music.m */,
 				773C122A1FBB419F00FF77B9 /* Assets.xcassets */,
@@ -308,10 +308,10 @@
 			files = (
 				773C12261FBB419F00FF77B9 /* HomeScreenViewController.m in Sources */,
 				778B48F61FC30B2600C2C8C7 /* SettingsScreenViewController.m in Sources */,
-				778B48F91FC30CAE00C2C8C7 /* Time.m in Sources */,
+				778B48F91FC30CAE00C2C8C7 /* TimeDataClass.m in Sources */,
 				778B48FF1FC30CD200C2C8C7 /* Music.m in Sources */,
 				773C12231FBB419F00FF77B9 /* AppDelegate.m in Sources */,
-				778B48FC1FC30CC000C2C8C7 /* Score.m in Sources */,
+				778B48FC1FC30CC000C2C8C7 /* ScoreDataClass.m in Sources */,
 				778B48F31FC30B0A00C2C8C7 /* GameScreenViewController.m in Sources */,
 				773C12201FBB419F00FF77B9 /* main.m in Sources */,
 			);

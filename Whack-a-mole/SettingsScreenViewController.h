@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Time.h"
+#import "TimeDataClass.h"
+
 @interface SettingsScreenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 
@@ -32,6 +33,9 @@
 - (IBAction)HardButtonPressed:(UIButton *)sender;
 - (IBAction)BackToStartButton:(UIButton *)sender;
 
-@property (strong, nonatomic) Time *time;
+
+//@property (strong, nonatomic) TimeDataClass *time;
+
+
 
 @end

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.time = [[Time alloc] init];
+    self.time = [[TimeDataClass alloc] init];
     
 }
 

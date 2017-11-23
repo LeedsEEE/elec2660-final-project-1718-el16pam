@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Time.h"
-#import "Score.h"
+#import "TimeDataClass.h"
+#import "ScoreDataClass.h"
 
 @interface GameScreenViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *TimeLeftLabel;
@@ -36,6 +36,6 @@
 - (IBAction)Mole9Pressed:(UIButton *)sender;
 - (IBAction)BackToStartPressed:(UIButton *)sender;
 
-@property (strong, nonatomic) Time *time;
+@property (strong, nonatomic) TimeDataClass *time;
 
 @end
