@@ -7,7 +7,7 @@
 //
 
 #import "SettingsScreenViewController.h"
-#import "TimeDataClass.h"
+
 @interface SettingsScreenViewController ()
 
 @end
@@ -67,7 +67,6 @@
     self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:0];                                               //Gets the first significant figure of the time from the picker
     self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:1];                                              //Gets the second significant figure of the time from the picker
     self.ThirdSignificantFigure = [self.TimePickerView selectedRowInComponent:2];                                               //Gets the third significant figure of the time from the picker
-    
     
     
 }

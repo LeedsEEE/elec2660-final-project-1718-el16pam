@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TimeDataClass.h"
+
 
 @interface SettingsScreenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 

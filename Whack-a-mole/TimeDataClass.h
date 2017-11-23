@@ -13,6 +13,6 @@
 @property int timeRemaining;
 @property float timeMoleShowed;
 @property float timeMoleHidden;
-@property (nonatomic) SettingsScreenViewController *ssvc;
+@property (strong, nonatomic) SettingsScreenViewController *ssvc;
 
 @end
