@@ -34,8 +34,6 @@
 - (IBAction)BackToStartButton:(UIButton *)sender;
 
 
-//@property (strong, nonatomic) TimeDataClass *time;
-
-
+@property (nonatomic) TimeDataClass *time;
 
 @end

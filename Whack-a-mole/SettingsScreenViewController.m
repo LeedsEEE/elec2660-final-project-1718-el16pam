@@ -21,7 +21,7 @@
     self.TimePickerView.delegate = self;
     self.TimePickerView.dataSource = self;
     
-    //self.time = [[TimeDataClass alloc] init];
+    self.time = [[TimeDataClass alloc] init];
     
     [self.TimePickerView selectRow:1 inComponent:0 animated:YES];
     [self.TimePickerView selectRow:2 inComponent:1 animated:YES];
@@ -68,7 +68,9 @@
     self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:1];                                              //Gets the second significant figure of the time from the picker
     self.ThirdSignificantFigure = [self.TimePickerView selectedRowInComponent:2];                                               //Gets the third significant figure of the time from the picker
     
+    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
     
+    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];                          //Displays the Time Selected
     
 }
 
