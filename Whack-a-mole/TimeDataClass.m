@@ -15,6 +15,8 @@
 {
     self = [super init];
     if (self) {
+        
+        
         self.ssvc = [[SettingsScreenViewController alloc] init];
         
         if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {

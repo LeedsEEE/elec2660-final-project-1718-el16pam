@@ -8,16 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SettingsScreenViewController.h"
-
 @interface TimeDataClass : NSObject
-
 @property float timeselected;
 @property int timeRemaining;
 @property float timeMoleShowed;
 @property float timeMoleHidden;
-
 @property (nonatomic) SettingsScreenViewController *ssvc;
-
-
 
 @end
