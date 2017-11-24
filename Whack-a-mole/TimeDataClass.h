@@ -14,6 +14,8 @@
 @property float timeMoleShowed;
 @property float timeMoleHidden;
 
+@property (strong, nonatomic) NSTimer *timer;
+
 //@property (nonatomic) SettingsScreenViewController *ssvc;
 
 @end

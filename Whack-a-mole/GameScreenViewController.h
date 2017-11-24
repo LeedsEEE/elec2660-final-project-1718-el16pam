@@ -37,5 +37,6 @@
 - (IBAction)BackToStartPressed:(UIButton *)sender;
 
 @property (strong, nonatomic) TimeDataClass *time;
+@property (strong, nonatomic) ScoreDataClass *score;
 
 @end

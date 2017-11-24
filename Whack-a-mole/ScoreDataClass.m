@@ -10,4 +10,14 @@
 
 @implementation ScoreDataClass
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.currentscore = 0;
+        
+    }
+    return self;
+}
+
 @end

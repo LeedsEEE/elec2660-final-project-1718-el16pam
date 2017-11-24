@@ -9,31 +9,37 @@
 #import "TimeDataClass.h"
 
 @implementation TimeDataClass
-    
-/*
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         
+        self.timeselected = 120;
         
-        //self.ssvc = [[SettingsScreenViewController alloc] init];
-        
-        if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
-            self.timeMoleHidden = 5;
-            self.timeMoleShowed = 4;
-        }
-        else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
-            self.timeMoleHidden = 3;
-            self.timeMoleShowed = 2;
-        }
-        else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
-            self.timeMoleHidden = 1.5;
-            self.timeMoleShowed = 1;
-        }
+        self.timeMoleHidden = 5;
+        self.timeMoleShowed = 4;
         
     }
     return self;
 }
-*/
+
 @end
+
+
+//self.ssvc = [[SettingsScreenViewController alloc] init];
+
+/*
+ if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
+ self.timeMoleHidden = 5;
+ self.timeMoleShowed = 4;
+ }
+ else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
+ self.timeMoleHidden = 3;
+ self.timeMoleShowed = 2;
+ }
+ else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
+ self.timeMoleHidden = 1.5;
+ self.timeMoleShowed = 1;
+ }
+ */

@@ -10,7 +10,7 @@
 
 @interface ScoreDataClass : NSObject
 
-@property int score;
+@property int currentscore;
 @property int highestscore;
 
 @end

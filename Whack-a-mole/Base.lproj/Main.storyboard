@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -321,7 +321,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ySS-oW-6iS"/>
                     <connections>
-                        <outlet property="HighestScoreLabel" destination="8JE-0m-xO1" id="K48-dL-dB6"/>
+                        <outlet property="HighestScoreLabel" destination="w0B-eZ-hvj" id="9Sa-Do-Wfm"/>
                         <outlet property="Mole1Button" destination="PnK-bC-vzc" id="hMn-0I-VS0"/>
                         <outlet property="Mole2Button" destination="Fgh-Xf-vua" id="0j8-I3-CB0"/>
                         <outlet property="Mole3Button" destination="2uI-NW-BVg" id="VFL-gr-rHW"/>
@@ -332,7 +332,7 @@
                         <outlet property="Mole8Button" destination="FgN-4s-bZa" id="TBY-g0-ZN4"/>
                         <outlet property="Mole9Button" destination="Sf4-Zl-KcG" id="zb5-oK-qRr"/>
                         <outlet property="NoTimeLeftLabel" destination="s9o-kG-1dT" id="U6d-nP-m3K"/>
-                        <outlet property="ScoreLabel" destination="w0B-eZ-hvj" id="JmG-dt-jl9"/>
+                        <outlet property="ScoreLabel" destination="8JE-0m-xO1" id="vVt-AF-t5J"/>
                         <outlet property="TimeLeftLabel" destination="6bx-0n-q9w" id="D5o-f1-izG"/>
                     </connections>
                 </viewController>
