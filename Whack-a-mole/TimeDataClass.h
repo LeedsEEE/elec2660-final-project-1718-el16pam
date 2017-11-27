@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface TimeDataClass : NSObject
 @property float timeselected;
 @property int timeRemaining;

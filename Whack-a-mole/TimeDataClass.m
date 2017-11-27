@@ -15,8 +15,6 @@
     self = [super init];
     if (self) {
         
-        self.timeselected = 120;
-        
         self.timeMoleHidden = 5;
         self.timeMoleShowed = 4;
         

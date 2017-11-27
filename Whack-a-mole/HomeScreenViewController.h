@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GameScreenViewController.h"
-#import "TimeDataClass.h"
 
 @interface HomeScreenViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *GameName;
@@ -16,8 +15,8 @@
 - (IBAction)SettingButtonPressed:(UIButton *)sender;
 - (IBAction)GameButtonPressed:(UIButton *)sender;
 
-@property (nonatomic) GameScreenViewController *gamescreen;
-@property (nonatomic) TimeDataClass *time1;
+//@property (strong, nonatomic) GameScreenViewController *gamescreen;
+//@property (strong, nonatomic) TimeDataClass *time1;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TimeDataClass.h"
+#import "GameScreenViewController.h"
 
 @interface SettingsScreenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -34,6 +35,7 @@
 - (IBAction)BackToStartButton:(UIButton *)sender;
 
 
-@property (nonatomic) TimeDataClass *time;
+@property (strong, nonatomic) TimeDataClass *time;
+@property (strong, nonatomic) GameScreenViewController *game;
 
 @end

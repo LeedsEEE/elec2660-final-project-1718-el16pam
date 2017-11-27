@@ -18,9 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.gamescreen = [[GameScreenViewController alloc] init];
-    self.time1 = [[TimeDataClass alloc] init];
-    self.time1.timeselected = 120.0;
+ //   self.gamescreen = [[GameScreenViewController alloc] init];
+ //   self.time1 = [[TimeDataClass alloc] init];
+ //   self.time1.timeselected = 120.0;
 }
 
 
@@ -41,7 +41,7 @@
     
     [self performSegueWithIdentifier:@"ShowGameScreen" sender:self];
     // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
-    self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.time1.timeselected];
+  //  self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.time1.timeselected];
     
 }
 @end

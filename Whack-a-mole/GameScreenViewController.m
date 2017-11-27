@@ -21,7 +21,8 @@ int i;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.time = [[TimeDataClass alloc] init];
+    
+    self.time1 = [[TimeDataClass alloc] init];
     self.score = [[ScoreDataClass alloc] init];
     
     self.Mole1Button.hidden = false;
@@ -34,8 +35,10 @@ int i;
     self.Mole8Button.hidden = true;
     self.Mole9Button.hidden = true;
     
+    self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.timeleft];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -104,8 +107,9 @@ int i;
         self.score.currentscore = self.score.currentscore + 1;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];
         self.Mole1Button.hidden = true;
-        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:NO];
+        self.time1.timer = [NSTimer scheduledTimerWithTimeInterval: self.time1.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:NO];
     }
+    
     
     
     

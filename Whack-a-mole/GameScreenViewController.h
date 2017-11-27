@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
 
+@property float timeleft;
+
 - (IBAction)Mole1Pressed:(UIButton *)sender;
 - (IBAction)Mole2Pressed:(UIButton *)sender;
 - (IBAction)Mole3Pressed:(UIButton *)sender;
@@ -36,7 +38,8 @@
 - (IBAction)Mole9Pressed:(UIButton *)sender;
 - (IBAction)BackToStartPressed:(UIButton *)sender;
 
-@property (strong, nonatomic) TimeDataClass *time;
+@property (strong, nonatomic) TimeDataClass *time1;
 @property (strong, nonatomic) ScoreDataClass *score;
+
 
 @end

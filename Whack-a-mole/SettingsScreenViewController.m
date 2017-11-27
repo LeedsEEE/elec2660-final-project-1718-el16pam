@@ -22,6 +22,7 @@
     self.TimePickerView.dataSource = self;
     
     self.time = [[TimeDataClass alloc] init];
+    self.game = [[GameScreenViewController alloc] init];
     
     [self.TimePickerView selectRow:1 inComponent:0 animated:YES];
     [self.TimePickerView selectRow:2 inComponent:1 animated:YES];
@@ -70,7 +71,13 @@
     
     self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
     
+    NSLog(@"%.0f", self.time.timeselected);
+    
     self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];                          //Displays the Time Selected
+    
+    self.game.timeleft = self.time.timeselected;
+    
+    NSLog(@"%.0f", self.game.timeleft);
     
 }
 
@@ -134,6 +141,8 @@ numberOfRowsInComponent:(NSInteger)component;{
 }
 
 - (IBAction)BackToStartButton:(UIButton *)sender {
+//    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
+    
 }
 
 @end
