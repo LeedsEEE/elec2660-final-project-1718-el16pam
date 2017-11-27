@@ -6,12 +6,15 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
+
+//To learn how to use NSTimer I used the following links https://stackoverflow.com/questions/13993945/make-a-button-visible-after-some-time-with-nstimer and https://stackoverflow.com/questions/5792804/making-a-function-wait-a-certain-amount-of-time-before-it-executes
+
 #import "GameScreenViewController.h"
 
 @interface GameScreenViewController ()
 
 @end
-
+int i;
 @implementation GameScreenViewController
 
 - (void)viewDidLoad {
@@ -21,7 +24,7 @@
     self.time = [[TimeDataClass alloc] init];
     self.score = [[ScoreDataClass alloc] init];
     
-    self.Mole1Button.hidden = true;
+    self.Mole1Button.hidden = false;
     self.Mole2Button.hidden = true;
     self.Mole3Button.hidden = true;
     self.Mole4Button.hidden = true;
@@ -30,6 +33,7 @@
     self.Mole7Button.hidden = true;
     self.Mole8Button.hidden = true;
     self.Mole9Button.hidden = true;
+    
     
 }
 
@@ -48,20 +52,61 @@
 }
 */
 
--(void) timerFire:(NSTimer *)timer {
+/*-(void) HideMole:(NSTimer *)timer {
+    
+    if (self.Mole1Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole1Button.hidden = true;
+    }
+    else if (self.Mole1Button.hidden == true) {
+        NSLog(@"Show Mole");
+        self.Mole1Button.hidden = false;
+    }
+}*/
+
+
+
+
+-(void) HideMole:(NSTimer *)timer {
+    
+        NSLog(@"Hide Mole");
+        self.Mole1Button.hidden = false;
+    
+    }
+
+/*-(void) ShowMole:(NSTimer *)timer {
+    if (self.Mole1Button.hidden == true) {
+        NSLog(@"Show Mole");
+        self.Mole1Button.hidden = false;
+    }
+//    NSLog(@"Hide Button");
+//    self.Mole1Button.hidden = true;
+}*/
+/*-(void) ShowMole:(NSTimer *)timer {
     NSLog(@"Hide Button");
-    self.Mole1Button.hidden = true;
-}
+    self.Mole1Button.hidden = false;
+}*/
+
+/*- (void) ShowHideMole {
+    for (int i = self.time.timeselected; i>0; i--) {
+        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
+    }
+}*/
+
+/*for (int i = self.time.timeselected; i>0; i--) {
+    self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
+}*/
+
 
 - (IBAction)Mole1Pressed:(UIButton *)sender {
     
     if (self.Mole1Button.hidden == false) {
         self.score.currentscore = self.score.currentscore + 1;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];
-        
-        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(timerFire:) userInfo:nil repeats:NO];
-        
+        self.Mole1Button.hidden = true;
+        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:NO];
     }
+    
     
     
 }
