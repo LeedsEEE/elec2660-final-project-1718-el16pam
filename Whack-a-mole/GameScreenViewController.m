@@ -48,6 +48,9 @@ int i;
     //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
     self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %i", self.score.highestscore];
     
+    self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
+    //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
+    
 }
 
 
@@ -77,6 +80,8 @@ int i;
         self.Mole1Button.hidden = false;
     }
 }
+
+#pragma mark Highest Score
 
 - (void)HighestScore {
     if (self.score.currentscore > self.score.highestscore) {

@@ -14,6 +14,9 @@
 {
     self = [super init];
     if (self) {
+        
+        //sets the initial values
+        
         self.currentscore = 0;
         self.highestscore = 0;
         

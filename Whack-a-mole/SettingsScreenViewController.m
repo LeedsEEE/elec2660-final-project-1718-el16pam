@@ -111,9 +111,11 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickHardImage.hidden = true;                                                                                           //Hides the tick next to the Hard Button
     
     self.difficulty = @"Easy";                                                                                                  //Sets the difficulty variable to "Easy"
-    self.time.timeMoleHidden = 5;
-    self.time.timeMoleShowed = 4;
-    
+    self.time.timeMoleHidden = 14;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
+    [defaults synchronize];
+    //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
 }
 
 - (IBAction)NormalButtonPressed:(UIButton *)sender {
@@ -123,8 +125,11 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickHardImage.hidden = true;                                                                                           //Hides the tick next to the Hard button
     
     self.difficulty = @"Normal";                                                                                                //Sets the difficulty variable to "Normal"
-    self.time.timeMoleHidden = 3;
-    self.time.timeMoleShowed = 2;
+    self.time.timeMoleHidden = 7;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
+    [defaults synchronize];
+    //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
 }
 
 - (IBAction)HardButtonPressed:(UIButton *)sender {
@@ -134,8 +139,11 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickHardImage.hidden = false;                                                                                          //Shows the tick next to the Hard button
     
     self.difficulty = @"Hard";                                                                                                  //Sets the difficulty variable to "Hard"
-    self.time.timeMoleHidden = 1.5;
-    self.time.timeMoleShowed = 1;
+    self.time.timeMoleHidden = 3.5;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
+    [defaults synchronize];
+    //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
