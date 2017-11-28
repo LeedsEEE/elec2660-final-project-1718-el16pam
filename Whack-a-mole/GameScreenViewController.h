@@ -11,6 +11,9 @@
 #import "ScoreDataClass.h"
 
 @interface GameScreenViewController : UIViewController
+
+#pragma mark properties
+
 @property (weak, nonatomic) IBOutlet UILabel *TimeLeftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *HighestScoreLabel;
@@ -24,8 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole7Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
-
 @property float timeleft;
+
+#pragma mark actions
 
 - (IBAction)Mole1Pressed:(UIButton *)sender;
 - (IBAction)Mole2Pressed:(UIButton *)sender;
@@ -38,8 +42,10 @@
 - (IBAction)Mole9Pressed:(UIButton *)sender;
 - (IBAction)BackToStartPressed:(UIButton *)sender;
 
-@property (strong, nonatomic) TimeDataClass *time1;
-@property (strong, nonatomic) ScoreDataClass *score;
+#pragma mark classes called
+
+@property (strong, nonatomic) TimeDataClass *time1;             //call the class TimeDataClass
+@property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
 
 
 @end

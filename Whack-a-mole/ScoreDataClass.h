@@ -10,6 +10,8 @@
 
 @interface ScoreDataClass : NSObject
 
+#pragma mark properties
+
 @property int currentscore;
 @property int highestscore;
 

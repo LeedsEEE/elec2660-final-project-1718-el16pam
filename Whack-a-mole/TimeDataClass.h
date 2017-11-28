@@ -10,11 +10,13 @@
 
 
 @interface TimeDataClass : NSObject
+
+#pragma mark properties
+
 @property float timeselected;
 @property int timeRemaining;
 @property float timeMoleShowed;
 @property float timeMoleHidden;
-
 @property (strong, nonatomic) NSTimer *timer;
 
 //@property (nonatomic) SettingsScreenViewController *ssvc;

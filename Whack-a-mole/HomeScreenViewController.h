@@ -10,7 +10,12 @@
 #import "GameScreenViewController.h"
 
 @interface HomeScreenViewController : UIViewController
+
+#pragma mark properties
+
 @property (weak, nonatomic) IBOutlet UILabel *GameName;
+
+#pragma mark actions
 
 - (IBAction)SettingButtonPressed:(UIButton *)sender;
 - (IBAction)GameButtonPressed:(UIButton *)sender;

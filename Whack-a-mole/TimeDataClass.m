@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        self.timeMoleHidden = 5;
+        self.timeMoleHidden = 15;
         self.timeMoleShowed = 4;
         
     }

@@ -18,14 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
     self.TimePickerView.delegate = self;
     self.TimePickerView.dataSource = self;
     
-    self.time = [[TimeDataClass alloc] init];
-    self.game = [[GameScreenViewController alloc] init];
+    self.time = [[TimeDataClass alloc] init];                                                                                   //initialize time data class in the settings screen view
+    self.game = [[GameScreenViewController alloc] init];                                                                        //initialize game screen view controller in the settings screen view
     
-    [self.TimePickerView selectRow:1 inComponent:0 animated:YES];
-    [self.TimePickerView selectRow:2 inComponent:1 animated:YES];
+    [self.TimePickerView selectRow:1 inComponent:0 animated:YES];                                                               //sets the the row in the first component
+    [self.TimePickerView selectRow:2 inComponent:1 animated:YES];                                                               //sets the the row in the second component
     //I found how to do this in the following link: https://stackoverflow.com/questions/11777072/how-to-set-a-default-value-of-a-uipickerview
     self.TimeSelectedLabel.text = @"Time = 120s";
     self.TickEasyImage.hidden = false;
@@ -71,13 +73,9 @@
     
     self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
     
-    NSLog(@"%.0f", self.time.timeselected);
+    NSLog(@"time selected = %.0f", self.time.timeselected);
     
     self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];                          //Displays the Time Selected
-    
-    self.game.timeleft = self.time.timeselected;
-    
-    NSLog(@"%.0f", self.game.timeleft);
     
 }
 
@@ -140,8 +138,17 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMoleShowed = 1;
 }
 
-- (IBAction)BackToStartButton:(UIButton *)sender {
-//    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;   //Calculates the time selected using the values extracted from the picker
+- (IBAction)SaveButton:(UIButton *)sender {
+    
+    self.game.timeleft = self.time.timeselected;                                                                                //Sets the variable timeleft to the time selected when the save button is pressed
+
+    
+    NSLog(@"time left = %.0f", self.game.timeleft);\
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.game.timeleft forKey:@"TimeLeft"];
+    [defaults synchronize];
+    //http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
     
 }
 

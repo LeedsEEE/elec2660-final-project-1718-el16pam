@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.currentscore = 0;
+        self.highestscore = 0;
         
     }
     return self;

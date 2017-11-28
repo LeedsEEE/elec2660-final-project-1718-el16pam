@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -32,10 +32,19 @@
                                     <action selector="SettingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cew-hX-lUA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whack-A-Mole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-uh-B3t">
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-uh-B3t">
+                                <attributedString key="attributedText">
+                                    <fragment content="Whack-A-Mole">
+                                        <attributes>
+                                            <color key="NSColor" red="0.24487501959999999" green="0.71083630180000001" blue="0.1577597684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="30" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.19202479759999999" green="0.55741985100000002" blue="0.1237112207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.19202479759999999" green="0.55741985100000002" blue="0.1237112207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,7 +124,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-Wk-CdF">
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save Settings"/>
+                                <connections>
+                                    <action selector="SaveButton:" destination="aEG-35-h61" eventType="touchUpInside" id="TQv-h0-V4O"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKG-XK-etX">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -171,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hy-RJ-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="266"/>
+            <point key="canvasLocation" x="1224.8" y="265.81709145427288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oLD-OS-w9n">
@@ -277,9 +289,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otk-BB-waN">
-                                <state key="normal" title="Button"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-0m-xO1">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -290,11 +299,9 @@
                         <constraints>
                             <constraint firstItem="Ymw-zv-b0U" firstAttribute="leading" secondItem="YbA-Cz-g2r" secondAttribute="leadingMargin" constant="20" id="2cE-8D-4ph"/>
                             <constraint firstItem="Suo-zx-kOn" firstAttribute="centerX" secondItem="YbA-Cz-g2r" secondAttribute="centerX" id="2cf-tZ-cB5"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Otk-BB-waN" secondAttribute="leading" id="7ks-AB-muV"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Fgh-Xf-vua" secondAttribute="bottom" constant="300" id="80l-ZA-Yls"/>
                             <constraint firstItem="8JE-0m-xO1" firstAttribute="top" secondItem="zTf-xD-zts" secondAttribute="bottom" constant="80" id="GUP-4Z-Goo"/>
                             <constraint firstItem="Fgh-Xf-vua" firstAttribute="centerX" secondItem="YbA-Cz-g2r" secondAttribute="centerX" id="J1d-gZ-C5S"/>
-                            <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Otk-BB-waN" secondAttribute="bottom" constant="10" id="Lq2-Iw-ktw"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Suo-zx-kOn" secondAttribute="bottom" constant="200" id="MhI-ta-W76"/>
                             <constraint firstItem="6bx-0n-q9w" firstAttribute="top" secondItem="zTf-xD-zts" secondAttribute="bottom" constant="10" id="QU8-5K-UjN"/>
                             <constraint firstItem="FgN-4s-bZa" firstAttribute="centerX" secondItem="YbA-Cz-g2r" secondAttribute="centerX" id="Se2-Vk-SMl"/>
