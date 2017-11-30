@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
 @property float timeleft;
+@property float TimeMole;                 //create a vaiable call difficulty
 
 #pragma mark actions
 

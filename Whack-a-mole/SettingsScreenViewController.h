@@ -27,7 +27,6 @@
 @property  NSInteger FirstSignificantFigure;                        //create a vaiable call FirstSignificantFigure
 @property  NSInteger SecondSignificantFigure;                       //create a vaiable call SecondSignifcantFigure
 @property  NSInteger ThirdSignificantFigure;                        //create a vaiable call ThirdSignificantFigure
-@property (nonatomic, strong) NSString *difficulty;                 //create a vaiable call difficulty
 
 #pragma mark actions
 

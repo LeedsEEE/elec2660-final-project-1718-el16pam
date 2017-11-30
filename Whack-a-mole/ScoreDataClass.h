@@ -13,6 +13,6 @@
 #pragma mark properties
 
 @property int currentscore;
-@property int highestscore;
+@property NSInteger highestscore;
 
 @end
