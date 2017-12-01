@@ -40,20 +40,21 @@ int i;
     //set all 9 buttons to hidden
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.timeleft = [defaults integerForKey:@"TimeLeft"];
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
     
     self.TimeMole = [defaults integerForKey:@"TimeMole"];
     
-    self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.timeleft];
+    self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
     //display time set on the settings view
 
     self.score.highestscore = [defaults integerForKey:@"HighestScore"];
     self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
     
-    self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
+    //self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
     
     [self startMoles];
-    [self startTimer];
+    [self.time1 startTimer];
+    [self changeLabel];
     
 }
 
@@ -73,85 +74,38 @@ int i;
 }
 */
 
--(void) HideMole {
+
+- (void) changeLabel {
     
-    if (self.Mole1Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole1Button.hidden = true;
-    }
-    else if (self.Mole1Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole1Button.hidden = false;
-    }
-    if (self.Mole2Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole2Button.hidden = true;
-    }
-    else if (self.Mole2Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole2Button.hidden = false;
-    }
-    if (self.Mole3Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole3Button.hidden = true;
-    }
-    else if (self.Mole3Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole3Button.hidden = false;
-    }
-    if (self.Mole4Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole4Button.hidden = true;
-    }
-    else if (self.Mole4Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole4Button.hidden = false;
-    }
-    if (self.Mole5Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole5Button.hidden = true;
-    }
-    else if (self.Mole5Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole5Button.hidden = false;
-    }
-    if (self.Mole6Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole6Button.hidden = true;
-    }
-    else if (self.Mole6Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole6Button.hidden = false;
-    }
-    if (self.Mole7Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole7Button.hidden = true;
-    }
-    else if (self.Mole7Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole7Button.hidden = false;
-    }
-    if (self.Mole8Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole8Button.hidden = true;
-    }
-    else if (self.Mole8Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole8Button.hidden = false;
-    }
-    if (self.Mole9Button.hidden == false){
-        NSLog(@"Hide Mole");
-        self.Mole9Button.hidden = true;
-    }
-    else if (self.Mole9Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole9Button.hidden = false;
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeLeftLabel) userInfo:nil repeats:YES];
+    if (self.time1.timeleft == 0) {
+        
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
     }
 }
 
+-(void) changeTimeLeftLabel {
+
+    if (self.time1.timeleft > 0) {
+        self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
+    }
+}
+/*-(void) fireTimer{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
+    if (self.time1.timeleft > 0) {
+        self.time1.timeleft = self.time1.timeleft - 1;
+        
+        NSLog(@"time left = %.0f", self.time1.timeleft);
+        self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
+        
+    }
+}
+*/
+
 #pragma mark Highest Score
 
-- (void)HighestScore {
+/*- (void)HighestScore {
     if (self.score.currentscore > self.score.highestscore) {
         self.score.highestscore = self.score.currentscore;
         
@@ -160,16 +114,90 @@ int i;
         [defaults setInteger:self.score.highestscore forKey:@"HighestScore"];
         [defaults synchronize];
     }
-    if (self.timeleft == 0) {
+    if (self.time1.timeleft == 0) {
         
         self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
     }
-}
-
+}*/
 - (void) startMoles {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval: self.time1.timeMoleHidden target:self selector:@selector(HideMole) userInfo:nil repeats:YES];
+}
+-(void) HideMole {
+    
+    if (self.Mole1Button.hidden == true){
+        NSLog(@"Hide Mole1");
+        self.Mole1Button.hidden = false;
+    }
+    else if (self.Mole1Button.hidden == false){
+        NSLog(@"Show Mole1");
+        self.Mole1Button.hidden = true;
+    }
+    if (self.Mole2Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole2Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole2Button.hidden = false;
+    }
+    if (self.Mole3Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole3Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole3Button.hidden = false;
+    }
+    if (self.Mole4Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole4Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole4Button.hidden = false;
+    }
+    if (self.Mole5Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole5Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole5Button.hidden = false;
+    }
+    if (self.Mole6Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole6Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole6Button.hidden = false;
+    }
+    if (self.Mole7Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole7Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole7Button.hidden = false;
+    }
+    if (self.Mole8Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole8Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole8Button.hidden = false;
+    }
+    if (self.Mole9Button.hidden == false){
+        NSLog(@"Hide Mole");
+        self.Mole9Button.hidden = true;
+    }
+    else {
+        NSLog(@"Show Mole");
+        self.Mole9Button.hidden = false;
+    }
 }
 
 /*- (void) firemoles{
@@ -177,25 +205,7 @@ int i;
     
 }*/
 
-- (void) startTimer {
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.timeleft = [defaults integerForKey:@"TimeLeft"];
-    
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(fireTimer) userInfo:nil repeats:YES];
-    
-    
-    
-}
 
--(void) fireTimer {
-    if (self.timeleft > 0) {
-        self.timeleft = self.timeleft - 1;
-        
-        NSLog(@"time left = %.0f", self.timeleft);
-        self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.timeleft];
-    }
-}
 
 /*
 -(void) HideMole:(NSTimer *)timer {         //set the time the mole will be hidden after pressed
@@ -240,7 +250,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
     
 }
 
@@ -254,7 +264,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole3Pressed:(UIButton *)sender {
@@ -267,7 +277,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole4Pressed:(UIButton *)sender {
@@ -280,7 +290,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole5Pressed:(UIButton *)sender {
@@ -293,7 +303,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole6Pressed:(UIButton *)sender {
@@ -306,7 +316,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole7Pressed:(UIButton *)sender {
@@ -319,7 +329,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole8Pressed:(UIButton *)sender {
@@ -332,7 +342,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)Mole9Pressed:(UIButton *)sender {
@@ -345,7 +355,7 @@ int i;
         
     }
     
-    [self HighestScore];
+    [self.score HighestScore];
 }
 
 - (IBAction)BackToStartPressed:(UIButton *)sender {

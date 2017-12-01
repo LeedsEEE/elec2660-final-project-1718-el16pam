@@ -153,12 +153,19 @@ numberOfRowsInComponent:(NSInteger)component;{
 
 - (IBAction)SaveButton:(UIButton *)sender {
     
-    self.game.timeleft = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
+    self.time.timeleft = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
     
-    NSLog(@"time left = %.0f", self.game.timeleft);
+    NSLog(@"time left = %.0f", self.time.timeleft);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.game.timeleft forKey:@"TimeLeft"];
+    [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
+    [defaults synchronize];
+    
+    self.time.starttime = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
+    
+    NSLog(@"start time = %.0f", self.time.starttime);
+    
+    [defaults setInteger:self.time.starttime forKey:@"StartTime"];
     [defaults synchronize];
     
     self.game.TimeMole = self.time.timeMoleHidden;

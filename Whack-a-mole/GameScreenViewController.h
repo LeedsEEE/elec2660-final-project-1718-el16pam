@@ -6,8 +6,11 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
+// find out about the @class name here https://stackoverflow.com/questions/31290769/two-class-access-each-other-by-importing-their-head-filevia-import-causes-er
+
 #import <UIKit/UIKit.h>
 #import "TimeDataClass.h"
+@class TimeDataClass;
 #import "ScoreDataClass.h"
 
 @interface GameScreenViewController : UIViewController
@@ -27,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole7Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
-@property float timeleft;
+
 @property float TimeMole;                 //create a vaiable call difficulty
 
 #pragma mark actions
@@ -48,5 +51,6 @@
 @property (strong, nonatomic) TimeDataClass *time1;             //call the class TimeDataClass
 @property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
 
-
+-(void) HideMole;
 @end
+

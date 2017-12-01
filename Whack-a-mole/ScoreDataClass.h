@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "TimeDataClass.h"
 
 @interface ScoreDataClass : NSObject
 
@@ -14,5 +15,7 @@
 
 @property int currentscore;
 @property NSInteger highestscore;
+//@property (strong, nonatomic) TimeDataClass *timeS;             //call the class TimeDataClass
 
+-(void) HighestScore;
 @end

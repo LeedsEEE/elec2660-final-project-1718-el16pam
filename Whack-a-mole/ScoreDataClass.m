@@ -16,12 +16,27 @@
     if (self) {
         
         //sets the initial values
-        
+        //self.timeS = [[TimeDataClass alloc] init];
         self.currentscore = 0;
         self.highestscore = 0;
         
     }
     return self;
+}
+
+- (void)HighestScore {
+    if (self.currentscore > self.highestscore) {
+        self.highestscore = self.currentscore;
+        
+        NSLog(@"hs = %li",(long)self.highestscore);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:self.highestscore forKey:@"HighestScore"];
+        [defaults synchronize];
+    }
+    /*if (self.timeS.timeleft == 0) {
+        
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.highestscore];
+    }*/
 }
 
 @end
