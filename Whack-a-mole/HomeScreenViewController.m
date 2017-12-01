@@ -6,6 +6,8 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
+//To learn how to use NSUserDefaults i used the following link http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
+
 #import "HomeScreenViewController.h"
 #import "SettingsScreenViewController.h"
 
@@ -21,7 +23,11 @@
  //   self.gamescreen = [[GameScreenViewController alloc] init];
  //   self.time1 = [[TimeDataClass alloc] init];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     [defaults setInteger:120 forKey:@"TimeLeft"];
+    
+    [defaults setInteger:3 forKey:@"TimeMoleHidden"];
+    
     [defaults synchronize];
 }
 

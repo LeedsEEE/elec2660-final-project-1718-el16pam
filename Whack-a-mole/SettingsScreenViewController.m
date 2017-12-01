@@ -112,7 +112,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal Button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard Button
     
-    self.time.timeMoleHidden = 14;
+    self.time.timeMoleHidden = 3;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
     [defaults synchronize];
@@ -127,7 +127,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = false;    //Shows the tick next to the Normal button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard button
     
-    self.time.timeMoleHidden = 7;
+    self.time.timeMoleHidden = 2;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
     [defaults synchronize];
@@ -142,7 +142,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal button
     self.TickHardImage.hidden = false;      //Shows the tick next to the Hard button
     
-    self.time.timeMoleHidden = 3.5;
+    self.time.timeMoleHidden = 1;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
     [defaults synchronize];
