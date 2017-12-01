@@ -39,10 +39,12 @@ int i;
     self.Mole9Button.hidden = true;
     //set all 9 buttons to hidden
     
+    self.NoTimeLeftLabel.hidden = true;
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
     
-    self.TimeMole = [defaults integerForKey:@"TimeMole"];
+    self.TimeMoleSet = [defaults integerForKey:@"TimeMoleSet"];
     
     self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
     //display time set on the settings view
@@ -50,11 +52,11 @@ int i;
     self.score.highestscore = [defaults integerForKey:@"HighestScore"];
     self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
     
-    //self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
+    //self.time1.timeMole = [defaults integerForKey:@"timeMole"];
     
     [self startMoles];
     [self.time1 startTimer];
-    [self changeLabel];
+    [self changeLabels];
     
 }
 
@@ -75,19 +77,23 @@ int i;
 */
 
 
-- (void) changeLabel {
+- (void) changeLabels {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeLeftLabel) userInfo:nil repeats:YES];
-    if (self.time1.timeleft == 0) {
-        
-        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
-    }
+    
 }
 
 -(void) changeTimeLeftLabel {
 
-    if (self.time1.timeleft > 0) {
+    if (self.time1.timeleft >= 0) {
         self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
+    }
+    if (self.time1.timeleft == 0) {
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
+        self.NoTimeLeftLabel.hidden = false;
     }
 }
 /*-(void) fireTimer{
@@ -121,11 +127,12 @@ int i;
 }*/
 - (void) startMoles {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.time1.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval: self.time1.timeMoleHidden target:self selector:@selector(HideMole) userInfo:nil repeats:YES];
+    self.TimeMoleSet = [defaults integerForKey:@"TimeMoleSet"];
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.TimeMoleSet target:self selector:@selector(HideMole) userInfo:nil repeats:YES];
 }
 -(void) HideMole {
-    
+    if (self.time1.timeleft > 0) {
     if (self.Mole1Button.hidden == true){
         NSLog(@"Hide Mole1");
         self.Mole1Button.hidden = false;
@@ -198,6 +205,7 @@ int i;
         NSLog(@"Show Mole");
         self.Mole9Button.hidden = false;
     }
+    }
 }
 
 /*- (void) firemoles{
@@ -230,19 +238,19 @@ int i;
 
 /*- (void) ShowHideMole {
     for (int i = self.time.timeselected; i>0; i--) {
-        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
+        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMole target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
     }
 }*/
 
 /*for (int i = self.time.timeselected; i>0; i--) {
-    self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMoleHidden target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
+    self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMole target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
 }*/
 
 #pragma mark moles buttons
 
 - (IBAction)Mole1Pressed:(UIButton *)sender {
     
-    if (self.Mole1Button.hidden == false) {
+    if (self.Mole1Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -256,7 +264,7 @@ int i;
 
 - (IBAction)Mole2Pressed:(UIButton *)sender {
     
-    if (self.Mole2Button.hidden == false) {
+    if (self.Mole2Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -269,7 +277,7 @@ int i;
 
 - (IBAction)Mole3Pressed:(UIButton *)sender {
     
-    if (self.Mole3Button.hidden == false) {
+    if (self.Mole3Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -282,7 +290,7 @@ int i;
 
 - (IBAction)Mole4Pressed:(UIButton *)sender {
     
-    if (self.Mole4Button.hidden == false) {
+    if (self.Mole4Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -295,7 +303,7 @@ int i;
 
 - (IBAction)Mole5Pressed:(UIButton *)sender {
     
-    if (self.Mole5Button.hidden == false) {
+    if (self.Mole5Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -308,7 +316,7 @@ int i;
 
 - (IBAction)Mole6Pressed:(UIButton *)sender {
     
-    if (self.Mole6Button.hidden == false) {
+    if (self.Mole6Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -321,7 +329,7 @@ int i;
 
 - (IBAction)Mole7Pressed:(UIButton *)sender {
     
-    if (self.Mole7Button.hidden == false) {
+    if (self.Mole7Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -334,7 +342,7 @@ int i;
 
 - (IBAction)Mole8Pressed:(UIButton *)sender {
     
-    if (self.Mole8Button.hidden == false) {
+    if (self.Mole8Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -347,7 +355,7 @@ int i;
 
 - (IBAction)Mole9Pressed:(UIButton *)sender {
     
-    if (self.Mole9Button.hidden == false) {
+    if (self.Mole9Button.hidden == false & self.time1.timeleft > 0) {
         
         self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
@@ -357,7 +365,5 @@ int i;
     
     [self.score HighestScore];
 }
-
-- (IBAction)BackToStartPressed:(UIButton *)sender {
-}
 @end
+

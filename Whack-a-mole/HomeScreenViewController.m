@@ -26,7 +26,7 @@
     
     [defaults setInteger:120 forKey:@"TimeLeft"];
     
-    [defaults setInteger:3 forKey:@"TimeMoleHidden"];
+    [defaults setInteger:3 forKey:@"TimeMoleSet"];
     
     [defaults synchronize];
 }

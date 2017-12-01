@@ -112,12 +112,10 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal Button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard Button
     
-    self.time.timeMoleHidden = 3;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
-    [defaults synchronize];
+    self.time.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.1f", self.time.timeMoleHidden);
+    
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
 
 }
 
@@ -127,12 +125,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = false;    //Shows the tick next to the Normal button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard button
     
-    self.time.timeMoleHidden = 2;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
-    [defaults synchronize];
+    self.time.timeMole = ((arc4random_uniform(110) + 150.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.1f", self.time.timeMoleHidden);
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
 
 }
 
@@ -142,37 +137,31 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal button
     self.TickHardImage.hidden = false;      //Shows the tick next to the Hard button
     
-    self.time.timeMoleHidden = 1;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.time.timeMoleHidden forKey:@"TimeMoleHidden"];
-    [defaults synchronize];
+    self.time.timeMole = ((arc4random_uniform(110) + 50.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.1f", self.time.timeMoleHidden);
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
     
    }
 
 - (IBAction)SaveButton:(UIButton *)sender {
     
+    if (self.time.timeselected != 0){
     self.time.timeleft = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
-    
+    }
+    else {
+        self.time.timeleft = 120;
+    }
     NSLog(@"time left = %.0f", self.time.timeleft);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
     [defaults synchronize];
     
-    self.time.starttime = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
+    self.game.TimeMoleSet = self.time.timeMole;
     
-    NSLog(@"start time = %.0f", self.time.starttime);
+    NSLog(@"time set for Mole = %.2f", self.game.TimeMoleSet);
     
-    [defaults setInteger:self.time.starttime forKey:@"StartTime"];
-    [defaults synchronize];
-    
-    self.game.TimeMole = self.time.timeMoleHidden;
-    
-    NSLog(@"time set for Mole = %.1f", self.game.TimeMole);
-    
-    [defaults setInteger:self.game.TimeMole forKey:@"TimeMole"];
+    [defaults setInteger:self.game.TimeMoleSet forKey:@"TimeMoleSet"];
     [defaults synchronize];
 
 }

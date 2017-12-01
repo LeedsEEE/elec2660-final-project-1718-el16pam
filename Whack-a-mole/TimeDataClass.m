@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        self.timeMoleHidden = 3;
+        self.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
         //self.timeMoleShowed = 4;
         self.gamescreen = [[GameScreenViewController alloc] init];
         
@@ -36,15 +36,14 @@
         self.timeleft = self.timeleft - 1;
         
         NSLog(@"time left = %.0f", self.timeleft);
-        //self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.timeleft];
-
+        
     }
 }
 
 /*- (void) startMoles {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.timeMoleHidden = [defaults integerForKey:@"TimeMoleHidden"];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: self.timeMoleHidden target:self.gamescreen selector:@selector(HideMole) userInfo:nil repeats:YES];
+    self.timeMole = [defaults integerForKey:@"timeMole"];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: self.timeMole target:self.gamescreen selector:@selector(HideMole) userInfo:nil repeats:YES];
 }*/
 
 /*-(void) HideMole {
@@ -132,15 +131,15 @@
 
 /*
  if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
- self.timeMoleHidden = 5;
+ self.timeMole = 5;
  self.timeMoleShowed = 4;
  }
  else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
- self.timeMoleHidden = 3;
+ self.timeMole = 3;
  self.timeMoleShowed = 2;
  }
  else if ([self.ssvc.difficulty isEqualToString:@"Easy"]) {
- self.timeMoleHidden = 1.5;
+ self.timeMole = 1.5;
  self.timeMoleShowed = 1;
  }
  */

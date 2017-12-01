@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "GameScreenViewController.h"
 @class GameScreenViewController;
-@interface TimeDataClass : NSObject 
+
+@interface TimeDataClass : NSObject
+
 #pragma mark properties
 
-@property float starttime;
 @property float timeleft;
 @property float timeselected;
 @property int timeRemaining;
-@property float timeMoleShowed;
-@property float timeMoleHidden;
+@property float timeMole;
+
 @property (strong, nonatomic) NSTimer *timer;
 
 @property (strong, nonatomic) GameScreenViewController *gamescreen;

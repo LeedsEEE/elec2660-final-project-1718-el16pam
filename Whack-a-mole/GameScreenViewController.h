@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
 
-@property float TimeMole;                 //create a vaiable call difficulty
+@property float TimeMoleSet;                 //create a vaiable call difficulty
 
 #pragma mark actions
 
@@ -44,7 +44,6 @@
 - (IBAction)Mole7Pressed:(UIButton *)sender;
 - (IBAction)Mole8Pressed:(UIButton *)sender;
 - (IBAction)Mole9Pressed:(UIButton *)sender;
-- (IBAction)BackToStartPressed:(UIButton *)sender;
 
 #pragma mark classes called
 
