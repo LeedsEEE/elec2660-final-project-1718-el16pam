@@ -26,8 +26,6 @@
 @property NSInteger rows;                                           //create a vaiable call rows
 @property  NSInteger FirstSignificantFigure;                        //create a vaiable call FirstSignificantFigure
 @property  NSInteger SecondSignificantFigure;                       //create a vaiable call SecondSignifcantFigure
-@property  NSInteger minute;                        //create a vaiable call ThirdSignificantFigure
-@property NSInteger seconds;
 
 #pragma mark actions
 

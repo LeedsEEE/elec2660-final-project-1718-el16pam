@@ -73,26 +73,30 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component;{
     
-    self.minute = [self.TimePickerView selectedRowInComponent:0];                       //Gets the third significant figure of the time from the picker
+    self.time.minute = [self.TimePickerView selectedRowInComponent:0];                       //Gets the third significant figure of the time from the picker
     self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:2];       //Gets the first significant figure of the time from the picker
     self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:3];      //Gets the second significant figure of the time from the picker
     
-    if (self.minute == 5) {
+    if (self.time.minute == 5) {
         self.FirstSignificantFigure = 0;
         [self.TimePickerView selectRow:0 inComponent:2 animated:YES];
     }
+    else if (self.time.minute == 0 & self.FirstSignificantFigure == 0) {
+        self.FirstSignificantFigure = 1;
+        [self.TimePickerView selectRow:1 inComponent:2 animated:YES];
+    }
     
-    self.seconds = self.FirstSignificantFigure*10 + self.SecondSignificantFigure;
-    self.time.timeselected = self.minute*60 + self.FirstSignificantFigure*10 + self.SecondSignificantFigure;       //Calculates the time selected using the values extracted from the picker
+    self.time.seconds = self.FirstSignificantFigure*10 + self.SecondSignificantFigure;
+    self.time.timeselected = self.time.minute*60 + self.FirstSignificantFigure*10 + self.SecondSignificantFigure;       //Calculates the time selected using the values extracted from the picker
     
     NSLog(@"time selected = %.0f", self.time.timeselected);
     if (self.FirstSignificantFigure == 0){
         
-        self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:00", (long)self.minute];      //Displays the Time Selected
+        self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:00", (long)self.time.minute];      //Displays the Time Selected
         
     }
     else {
-    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:%ld", (long)self.minute, (long)self.seconds];      //Displays the Time Selected
+    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:%ld", (long)self.time.minute, (long)self.time.seconds];      //Displays the Time Selected
     
     }
     
@@ -251,13 +255,16 @@ numberOfRowsInComponent:(NSInteger)component;{
 - (IBAction)SaveButton:(UIButton *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (self.time.timeselected != 0){
-    self.time.timeleft = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
+    self.time.timeleftminute = self.time.minute;        //Sets the variable timeleft to the time selected when the save button is pressed
+    self.time.timeleftseconds = self.time.seconds;
     }
     else {
-        self.time.timeleft = 120;
+        self.time.timeleftminute = 1;
     }
-    NSLog(@"time left = %.0f", self.time.timeleft);
-    [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
+    NSLog(@"Time = %li:%ld", (long)self.time.minute, (long)self.time.seconds);
+    [defaults setInteger:self.time.timeleftminute forKey:@"TimeLeftMinute"];
+    [defaults synchronize];
+    [defaults setInteger:self.time.timeleftseconds forKey:@"TimeLeftSeconds"];
     [defaults synchronize];
     
     if (self.time.timeMole1 != 0){

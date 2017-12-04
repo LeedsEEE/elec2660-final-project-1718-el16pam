@@ -80,7 +80,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyp-9L-u3r"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyp-9L-u3r">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="xSe-DN-SAQ"/>
+                                </constraints>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-aE-ajh">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -159,22 +163,21 @@
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerY" secondItem="Rfy-EG-w0S" secondAttribute="centerY" id="FYy-sm-vCB"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerX" secondItem="1gX-yu-KC7" secondAttribute="centerX" id="FxN-gL-hS2"/>
                             <constraint firstItem="MMJ-wz-ZMG" firstAttribute="centerY" secondItem="BKb-nV-hvd" secondAttribute="centerY" id="JR1-rX-OXW"/>
-                            <constraint firstItem="iyp-9L-u3r" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="55" id="NdU-pz-ecG"/>
                             <constraint firstItem="J1J-g0-MXs" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="Nvh-dS-59C"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iyp-9L-u3r" secondAttribute="trailing" constant="-16" id="OmT-yi-r3q"/>
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="Qtl-ia-pBz"/>
                             <constraint firstItem="IKG-XK-etX" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="RCO-JB-qxq"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="leading" secondItem="1Gz-vN-oJ8" secondAttribute="trailing" constant="20" id="Xls-8u-FBg"/>
-                            <constraint firstItem="iyp-9L-u3r" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="YGW-M6-NHX"/>
                             <constraint firstItem="1gX-yu-KC7" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="ZYQ-5Z-DHb"/>
                             <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="e4d-Jf-0NT" secondAttribute="bottom" constant="20" id="asg-Em-KGa"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="25" id="cWi-da-peP"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="cdD-qg-Mh5"/>
+                            <constraint firstItem="iyp-9L-u3r" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="dsI-8q-FSk"/>
                             <constraint firstItem="Ga0-aE-ajh" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="fS3-wt-yJT"/>
                             <constraint firstItem="BKb-nV-hvd" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="175" id="q03-bA-WXg"/>
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="100" id="rMY-Kq-Nl5"/>
+                            <constraint firstItem="iyp-9L-u3r" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="55" id="to9-c1-dkx"/>
                             <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="y4w-Wk-CdF" secondAttribute="bottom" constant="20" id="vdx-1j-3hB"/>
-                            <constraint firstItem="J1J-g0-MXs" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="325" id="wIr-dc-ZtH"/>
+                            <constraint firstItem="J1J-g0-MXs" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="350" id="wIr-dc-ZtH"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="xgK-so-brm"/>
                         </constraints>
                     </view>
@@ -192,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hy-RJ-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="313"/>
+            <point key="canvasLocation" x="1224.8" y="312.59370314842579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oLD-OS-w9n">

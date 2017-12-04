@@ -14,7 +14,10 @@
 
 #pragma mark properties
 
-@property float timeleft;
+@property  NSInteger minute;                        //create a vaiable call ThirdSignificantFigure
+@property NSInteger seconds;
+@property float timeleftminute;
+@property float timeleftseconds;
 @property float timeselected;
 @property int timeRemaining;
 
@@ -47,8 +50,6 @@
 @property float timeMole7;
 @property float timeMole8;
 @property float timeMole9;
-
-@property float waittime;
 
 @property (strong, nonatomic) NSTimer *timer;
 

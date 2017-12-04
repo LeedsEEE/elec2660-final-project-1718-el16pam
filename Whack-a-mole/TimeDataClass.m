@@ -59,21 +59,36 @@
 - (void) startTimer {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.timeleft = [defaults integerForKey:@"TimeLeft"];
+    [defaults setInteger:self.timeleftminute forKey:@"TimeLeftMinute"];
+    [defaults synchronize];
+    [defaults setInteger:self.timeleftseconds forKey:@"TimeLeftSeconds"];
+    [defaults synchronize];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(fireTimer) userInfo:nil repeats:YES];
     
 }
 
 -(void) fireTimer {
-    if (self.timeleft > 0) {
-        self.timeleft = self.timeleft - 1;
-        if (self.timeleft/5.0 == floorf(self.timeleft/5.0)) { //https://stackoverflow.com/questions/20018819/check-if-float-value-is-integer
-            NSLog(@"time left = %.0f", self.timeleft);
+    if (self.timeleftminute != 0 | self.timeleftseconds != 0) {
+        if (self.timeleftseconds != 0) {
+            self.timeleftseconds -= 1;
+            /*if (self.timeleft/5.0 == floorf(self.timeleft/5.0)) { //https://stackoverflow.com/questions/20018819/check-if-float-value-is-integer
+             NSLog(@"time left = %.0f", self.timeleft)
+             }*/
         }
+        else if (self.timeleftseconds == 0){
+            self.timeleftminute -= 1;
+            self.timeleftseconds = 59;
+        }
+    else {
         
-        
+            self.timeleftseconds = 0;
+            self.timeleftminute = 0;
+            
+
+    }
     }
 }
+
 
 /*- (void) startMoles {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
