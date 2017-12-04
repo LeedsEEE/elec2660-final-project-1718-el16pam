@@ -44,8 +44,10 @@
 -(void) fireTimer {
     if (self.timeleft > 0) {
         self.timeleft = self.timeleft - 1;
+        if (self.timeleft/5.0 == floorf(self.timeleft/5.0)) { //https://stackoverflow.com/questions/20018819/check-if-float-value-is-integer
+            NSLog(@"time left = %.0f", self.timeleft);
+        }
         
-        NSLog(@"time left = %.0f", self.timeleft);
         
     }
 }

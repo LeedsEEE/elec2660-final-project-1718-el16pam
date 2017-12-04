@@ -58,6 +58,13 @@ int i;
     
     [self startMole1];
     [self startMole2];
+    [self startMole3];
+    [self startMole4];
+    [self startMole5];
+    [self startMole6];
+    [self startMole7];
+    [self startMole8];
+    [self startMole9];
     [self.time1 startTimer];
     [self changeLabels];
     
@@ -163,11 +170,11 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole8 target:self selector:@selector(Mole8) userInfo:nil repeats:YES];
     
 }
-- (void) startMole2 {
+- (void) startMole9 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.time1.timeMole2 = [defaults floatForKey:@"TimeMole2"];
+    self.time1.timeMole9 = [defaults floatForKey:@"TimeMole9"];
     
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole2 target:self selector:@selector(Mole2) userInfo:nil repeats:YES];
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole9 target:self selector:@selector(Mole9) userInfo:nil repeats:YES];
     
 }
 -(void) Mole1 {
@@ -203,61 +210,61 @@ int i;
 -(void) Mole4 {
     if (self.time1.timeleft > 0) {
     if (self.Mole4Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole4");
         self.Mole4Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole4");
         self.Mole4Button.hidden = false;
     }}}
 -(void) Mole5 {
     if (self.time1.timeleft > 0) {
     if (self.Mole5Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole5");
         self.Mole5Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole5");
         self.Mole5Button.hidden = false;
     }}}
 -(void) Mole6 {
     if (self.time1.timeleft > 0) {
     if (self.Mole6Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole6");
         self.Mole6Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole6");
         self.Mole6Button.hidden = false;
     }}}
 -(void) Mole7 {
     if (self.time1.timeleft > 0) {
     if (self.Mole7Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole7");
         self.Mole7Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole7");
         self.Mole7Button.hidden = false;
     }}}
 -(void) Mole8 {
     if (self.time1.timeleft > 0) {
     if (self.Mole8Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole8");
         self.Mole8Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole8");
         self.Mole8Button.hidden = false;
     }}}
 -(void) Mole9 {
     if (self.time1.timeleft > 0) {
     if (self.Mole9Button.hidden == false){
-        NSLog(@"Hide Mole");
+        NSLog(@"Hide Mole9");
         self.Mole9Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole");
+        NSLog(@"Show Mole9");
         self.Mole9Button.hidden = false;
     }}}
 

@@ -21,7 +21,7 @@
 - (IBAction)GameButtonPressed:(UIButton *)sender;
 
 //@property (strong, nonatomic) GameScreenViewController *gamescreen;
-//@property (strong, nonatomic) TimeDataClass *time1;
+
 
 @end
 

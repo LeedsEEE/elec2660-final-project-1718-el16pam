@@ -132,15 +132,15 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
     self.time.timeMole9Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);*/
     
-    self.time.timeMole1 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole2 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole3 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole4 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole5 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole6 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole7 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole8 = ((arc4random_uniform(501) + 500.0f)/100.0f);
-    self.time.timeMole9 = ((arc4random_uniform(501) + 500.0f)/100.0f);
+    self.time.timeMole1 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole2 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole3 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole4 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole5 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole6 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole7 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole8 = ((arc4random_uniform(251) + 250.0f)/100.0f);
+    self.time.timeMole9 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     
     
     NSLog(@"time selected for Mole = %.2f", self.time.timeMole1);
@@ -171,15 +171,15 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
     self.time.timeMole9Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);*/
     
-    self.time.timeMole1 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole2 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole3 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole4 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole5 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole6 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole7 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole8 = ((arc4random_uniform(501) + 250.0f)/100.0f);
-    self.time.timeMole9 = ((arc4random_uniform(501) + 250.0f)/100.0f);
+    self.time.timeMole1 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole2 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole3 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole4 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole5 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole6 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole7 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole8 = ((arc4random_uniform(251) + 150.0f)/100.0f);
+    self.time.timeMole9 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     
     NSLog(@"time selected for Mole = %.2f", self.time.timeMole1);
 
@@ -211,15 +211,15 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
     self.time.timeMole9Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);*/
 
-    self.time.timeMole1 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole2 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole3 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole4 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole5 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole6 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole7 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole8 = ((arc4random_uniform(151) + 50.0f)/100.0f);
-    self.time.timeMole9 = ((arc4random_uniform(151) + 50.0f)/100.0f);
+    self.time.timeMole1 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole2 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole3 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole4 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole5 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole6 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole7 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole8 = ((arc4random_uniform(251) + 50.0f)/100.0f);
+    self.time.timeMole9 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
