@@ -44,8 +44,8 @@ int i;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
     
-    self.time1.timeMole1Showed = [defaults integerForKey:@"TimeMole1s"];
-    self.time1.timeMole1Hidden = [defaults integerForKey:@"TimeMole1h"];
+    self.time1.timeMole1 = [defaults integerForKey:@"TimeMole1"];
+    self.time1.timeMole2 = [defaults integerForKey:@"TimeMole2"];
     
     self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0fs", self.time1.timeleft];
     //display time set on the settings view
@@ -55,7 +55,9 @@ int i;
     
     //self.time1.timeMole = [defaults integerForKey:@"timeMole"];
     
+    
     [self startMole1];
+    [self startMole2];
     [self.time1 startTimer];
     [self changeLabels];
     
@@ -77,11 +79,11 @@ int i;
 }
 */
 
-- (void) startMole1 {
+/*- (void) startMole1 {
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(Mole1t) userInfo:nil repeats:YES];
     
-}
+}*/
 
 
 - (void) changeLabels {
@@ -104,19 +106,70 @@ int i;
     }
 }
 
-- (void) Mole1t {
+
+- (void) startMole1 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.TimeMoleSet = [defaults integerForKey:@"TimeMoleSet"];
-    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
-    if (self.Mole1Button.hidden == true) {
-        self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole1Showed target:self selector:@selector(Mole1) userInfo:nil repeats:NO];
-        self.time1.waittime = self.time1.timeMole1Showed;
-    }
-    else {
-        self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole1Hidden target:self selector:@selector(Mole1) userInfo:nil repeats:NO];
-        self.time1.waittime = self.time1.timeMole1Showed;
-    }
-    }
+    self.time1.timeMole1 = [defaults floatForKey:@"TimeMole1"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole1 target:self selector:@selector(Mole1) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole2 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole2 = [defaults floatForKey:@"TimeMole2"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole2 target:self selector:@selector(Mole2) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole3 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole3 = [defaults floatForKey:@"TimeMole3"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole3 target:self selector:@selector(Mole3) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole4 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole4 = [defaults floatForKey:@"TimeMole4"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole4 target:self selector:@selector(Mole4) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole5 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole5 = [defaults floatForKey:@"TimeMole5"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole5 target:self selector:@selector(Mole5) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole6 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole6 = [defaults floatForKey:@"TimeMole6"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole6 target:self selector:@selector(Mole6) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole7 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole7 = [defaults floatForKey:@"TimeMole7"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole7 target:self selector:@selector(Mole7) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole8 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole8 = [defaults floatForKey:@"TimeMole8"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole8 target:self selector:@selector(Mole8) userInfo:nil repeats:YES];
+    
+}
+- (void) startMole2 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.time1.timeMole2 = [defaults floatForKey:@"TimeMole2"];
+    
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole2 target:self selector:@selector(Mole2) userInfo:nil repeats:YES];
+    
+}
 -(void) Mole1 {
     if (self.time1.timeleft > 0) {
     if (self.Mole1Button.hidden == false){

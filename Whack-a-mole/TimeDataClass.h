@@ -18,7 +18,7 @@
 @property float timeselected;
 @property int timeRemaining;
 
-@property float timeMole1Hidden;
+/*@property float timeMole1Hidden;
 @property float timeMole2Hidden;
 @property float timeMole3Hidden;
 @property float timeMole4Hidden;
@@ -36,7 +36,17 @@
 @property float timeMole6Showed;
 @property float timeMole7Showed;
 @property float timeMole8Showed;
-@property float timeMole9Showed;
+@property float timeMole9Showed;*/
+
+@property float timeMole1;
+@property float timeMole2;
+@property float timeMole3;
+@property float timeMole4;
+@property float timeMole5;
+@property float timeMole6;
+@property float timeMole7;
+@property float timeMole8;
+@property float timeMole9;
 
 @property float waittime;
 
