@@ -34,6 +34,7 @@
 - (IBAction)NormalButtonPressed:(UIButton *)sender;
 - (IBAction)HardButtonPressed:(UIButton *)sender;
 - (IBAction)SaveButton:(UIButton *)sender;
+- (IBAction)BackToStart:(UIButton *)sender;
 //All the actions in my Screen View Controller
 
 #pragma mark classes called

@@ -250,13 +250,9 @@ int i;
 
 - (IBAction)Mole1Pressed:(UIButton *)sender {
     
-    if (self.Mole1Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+        self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole1Button.hidden = true;                                                                 //hides the button
-        
-    }
     
     [self.score HighestScore];
     
@@ -277,93 +273,71 @@ int i;
 
 - (IBAction)Mole3Pressed:(UIButton *)sender {
     
-    if (self.Mole3Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+        self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole3Button.hidden = true;                                                                 //hides the button
-        
-    }
     
     [self.score HighestScore];
 }
 
 - (IBAction)Mole4Pressed:(UIButton *)sender {
     
-    if (self.Mole4Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole4Button.hidden = true;                                                                 //hides the button
         
-    }
-    
     [self.score HighestScore];
 }
 
 - (IBAction)Mole5Pressed:(UIButton *)sender {
     
-    if (self.Mole5Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole5Button.hidden = true;                                                                 //hides the button
-        
-    }
     
     [self.score HighestScore];
 }
 
 - (IBAction)Mole6Pressed:(UIButton *)sender {
     
-    if (self.Mole6Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole6Button.hidden = true;                                                                 //hides the button
         
-    }
-    
     [self.score HighestScore];
 }
 
 - (IBAction)Mole7Pressed:(UIButton *)sender {
     
-    if (self.Mole7Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole7Button.hidden = true;                                                                 //hides the button
         
-    }
-    
     [self.score HighestScore];
 }
 
 - (IBAction)Mole8Pressed:(UIButton *)sender {
     
-    if (self.Mole8Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole8Button.hidden = true;                                                                 //hides the button
-        
-    }
     
     [self.score HighestScore];
 }
 
 - (IBAction)Mole9Pressed:(UIButton *)sender {
     
-    if (self.Mole9Button.hidden == false & self.time1.timeleft > 0) {
-        
-        self.score.currentscore = self.score.currentscore + 1;                                          //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole9Button.hidden = true;                                                                 //hides the button
-        
-    }
     
     [self.score HighestScore];
+}
+
+- (IBAction)BackToStart:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:@"BackFromGameScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    
 }
 @end
 

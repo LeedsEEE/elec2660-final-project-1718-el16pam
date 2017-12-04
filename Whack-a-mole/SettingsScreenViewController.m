@@ -166,5 +166,10 @@ numberOfRowsInComponent:(NSInteger)component;{
 
 }
 
+- (IBAction)BackToStart:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:@"BackFromSettingsScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    
+}
 @end
 

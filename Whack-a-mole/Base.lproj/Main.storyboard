@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -141,11 +141,19 @@
                                     <constraint firstAttribute="height" constant="44" id="fys-Rg-iqq"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Jf-0NT">
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackToStart:" destination="aEG-35-h61" eventType="touchUpInside" id="XEW-IG-7QR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IKG-XK-etX" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="275" id="2lb-NU-Zbf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y4w-Wk-CdF" secondAttribute="trailing" id="3sj-vB-Ufm"/>
                             <constraint firstItem="BKb-nV-hvd" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="4MF-pa-EzA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="e4d-Jf-0NT" secondAttribute="leading" id="AAL-gO-AW6"/>
                             <constraint firstItem="1gX-yu-KC7" firstAttribute="centerY" secondItem="GyD-Wj-goG" secondAttribute="centerY" id="CKr-5O-2SR"/>
                             <constraint firstItem="Ga0-aE-ajh" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="25" id="DAl-zc-BL5"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerY" secondItem="Rfy-EG-w0S" secondAttribute="centerY" id="FYy-sm-vCB"/>
@@ -156,16 +164,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="iyp-9L-u3r" secondAttribute="trailing" constant="-16" id="OmT-yi-r3q"/>
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="Qtl-ia-pBz"/>
                             <constraint firstItem="IKG-XK-etX" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="RCO-JB-qxq"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="y4w-Wk-CdF" secondAttribute="leading" id="WNh-xK-1Ua"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="leading" secondItem="1Gz-vN-oJ8" secondAttribute="trailing" constant="20" id="Xls-8u-FBg"/>
                             <constraint firstItem="iyp-9L-u3r" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="YGW-M6-NHX"/>
                             <constraint firstItem="1gX-yu-KC7" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="ZYQ-5Z-DHb"/>
+                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="e4d-Jf-0NT" secondAttribute="bottom" constant="20" id="asg-Em-KGa"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="25" id="cWi-da-peP"/>
                             <constraint firstItem="Rfy-EG-w0S" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="cdD-qg-Mh5"/>
                             <constraint firstItem="Ga0-aE-ajh" firstAttribute="centerX" secondItem="2TK-Xe-5CE" secondAttribute="centerX" id="fS3-wt-yJT"/>
                             <constraint firstItem="BKb-nV-hvd" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="175" id="q03-bA-WXg"/>
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="top" secondItem="J1J-g0-MXs" secondAttribute="bottom" constant="100" id="rMY-Kq-Nl5"/>
-                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="y4w-Wk-CdF" secondAttribute="bottom" constant="10" id="vdx-1j-3hB"/>
+                            <constraint firstItem="Ycn-jn-YW1" firstAttribute="top" secondItem="y4w-Wk-CdF" secondAttribute="bottom" constant="20" id="vdx-1j-3hB"/>
                             <constraint firstItem="J1J-g0-MXs" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="325" id="wIr-dc-ZtH"/>
                             <constraint firstItem="1Gz-vN-oJ8" firstAttribute="centerX" secondItem="MMJ-wz-ZMG" secondAttribute="centerX" id="xgK-so-brm"/>
                         </constraints>
@@ -179,16 +187,17 @@
                         <outlet property="TimeLabel" destination="Ga0-aE-ajh" id="KvF-8D-gqS"/>
                         <outlet property="TimePickerView" destination="iyp-9L-u3r" id="WRG-5L-JSh"/>
                         <outlet property="TimeSelectedLabel" destination="IKG-XK-etX" id="5o2-QZ-rOl"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BackFromSettingsScreen" animates="NO" id="oAT-aK-rvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hy-RJ-2Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224.8" y="265.81709145427288"/>
+            <point key="canvasLocation" x="1225" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oLD-OS-w9n">
             <objects>
-                <navigationController id="0lN-ym-5uF" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="0lN-ym-5uF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQX-ot-acL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -294,6 +303,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxj-Jw-bne">
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackToStart:" destination="t9k-CI-cZH" eventType="touchUpInside" id="HAe-af-MkL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -310,6 +325,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w0B-eZ-hvj" secondAttribute="trailing" id="YcG-za-DVc"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Ymw-zv-b0U" secondAttribute="bottom" constant="100" id="b1O-SZ-RCB"/>
                             <constraint firstItem="s9o-kG-1dT" firstAttribute="top" secondItem="zTf-xD-zts" secondAttribute="bottom" constant="150" id="c6R-6c-wCt"/>
+                            <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Nxj-Jw-bne" secondAttribute="bottom" constant="20" id="c6T-zs-mrT"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="FgN-4s-bZa" secondAttribute="bottom" constant="100" id="cHc-70-bZo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2uI-NW-BVg" secondAttribute="trailing" constant="20" id="do3-st-1Q9"/>
                             <constraint firstItem="s9o-kG-1dT" firstAttribute="centerX" secondItem="YbA-Cz-g2r" secondAttribute="centerX" id="esx-AT-FfJ"/>
@@ -320,6 +336,7 @@
                             <constraint firstItem="Wus-F6-I79" firstAttribute="leading" secondItem="YbA-Cz-g2r" secondAttribute="leadingMargin" constant="20" id="mZe-mm-Gae"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Wus-F6-I79" secondAttribute="bottom" constant="200" id="rCP-tg-cJa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="6bx-0n-q9w" secondAttribute="leading" id="tYH-4T-W1t"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Nxj-Jw-bne" secondAttribute="leading" id="trP-Mp-UIR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fbe-xm-kpv" secondAttribute="trailing" constant="20" id="uCr-dT-3bX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sf4-Zl-KcG" secondAttribute="trailing" constant="20" id="xAg-iM-pFi"/>
                             <constraint firstItem="w0B-eZ-hvj" firstAttribute="top" secondItem="zTf-xD-zts" secondAttribute="bottom" constant="10" id="zIP-5Z-Omg"/>
@@ -340,6 +357,7 @@
                         <outlet property="NoTimeLeftLabel" destination="s9o-kG-1dT" id="U6d-nP-m3K"/>
                         <outlet property="ScoreLabel" destination="8JE-0m-xO1" id="vVt-AF-t5J"/>
                         <outlet property="TimeLeftLabel" destination="6bx-0n-q9w" id="D5o-f1-izG"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BackFromGameScreen" animates="NO" id="uW3-Hy-wTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fia-n4-hOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,4 +368,7 @@
     <resources>
         <image name="check_mark_u2713_icon_256x256.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oAT-aK-rvm"/>
+    </inferredMetricsTieBreakers>
 </document>

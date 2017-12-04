@@ -44,6 +44,7 @@
 - (IBAction)Mole7Pressed:(UIButton *)sender;
 - (IBAction)Mole8Pressed:(UIButton *)sender;
 - (IBAction)Mole9Pressed:(UIButton *)sender;
+- (IBAction)BackToStart:(UIButton *)sender;
 
 #pragma mark classes called
 
