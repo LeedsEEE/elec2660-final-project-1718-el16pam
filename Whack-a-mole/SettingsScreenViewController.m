@@ -29,9 +29,8 @@
     self.game = [[GameScreenViewController alloc] init];        //initialize game screen view controller in the settings screen view
     
     [self.TimePickerView selectRow:1 inComponent:0 animated:YES];       //sets the the row in the first component
-    [self.TimePickerView selectRow:2 inComponent:1 animated:YES];       //sets the the row in the second component
     //I found how to do this in the following link: https://stackoverflow.com/questions/11777072/how-to-set-a-default-value-of-a-uipickerview
-    self.TimeSelectedLabel.text = @"Time = 120s";
+    self.TimeSelectedLabel.text = @"Time = 1:00";
     self.TickEasyImage.hidden = false;
     self.TickNormalImage.hidden = true;
     self.TickHardImage.hidden = true;
@@ -58,8 +57,13 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView     //Sets the number in each row equal to the row number
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component;{
-    
-    NSString *number = [NSString stringWithFormat:@"%ld", row];
+    NSString *number;
+    if (component != 1) {
+        number = [NSString stringWithFormat:@"%ld", row];
+    }
+    else {
+        number = [NSString stringWithFormat:@":"];
+    }
     
     return number;
     
@@ -69,15 +73,30 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component;{
     
-    self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:0];       //Gets the first significant figure of the time from the picker
-    self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:1];      //Gets the second significant figure of the time from the picker
-    self.ThirdSignificantFigure = [self.TimePickerView selectedRowInComponent:2];       //Gets the third significant figure of the time from the picker
+    self.minute = [self.TimePickerView selectedRowInComponent:0];                       //Gets the third significant figure of the time from the picker
+    self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:2];       //Gets the first significant figure of the time from the picker
+    self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:3];      //Gets the second significant figure of the time from the picker
     
-    self.time.timeselected = self.FirstSignificantFigure*100 + self.SecondSignificantFigure*10 + self.ThirdSignificantFigure;       //Calculates the time selected using the values extracted from the picker
+    if (self.minute == 5) {
+        self.FirstSignificantFigure = 0;
+        [self.TimePickerView selectRow:0 inComponent:2 animated:YES];
+    }
+    
+    self.seconds = self.FirstSignificantFigure*10 + self.SecondSignificantFigure;
+    self.time.timeselected = self.minute*60 + self.FirstSignificantFigure*10 + self.SecondSignificantFigure;       //Calculates the time selected using the values extracted from the picker
     
     NSLog(@"time selected = %.0f", self.time.timeselected);
+    if (self.FirstSignificantFigure == 0){
+        
+        self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:00", (long)self.minute];      //Displays the Time Selected
+        
+    }
+    else {
+    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %li:%ld", (long)self.minute, (long)self.seconds];      //Displays the Time Selected
     
-    self.TimeSelectedLabel.text = [NSString stringWithFormat:@"Time = %.0fs", self.time.timeselected];      //Displays the Time Selected
+    }
+    
+   
     
 }
 
@@ -85,7 +104,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;{
     
-    return 3;
+    return 4;
     
 }
 
@@ -93,10 +112,13 @@
 numberOfRowsInComponent:(NSInteger)component;{
     
     if (component == 0) {
-        self.rows = 5;
+        self.rows = 6;
     }
     else if (component == 1) {
-        self.rows = 10;
+        self.rows = 1;
+    }
+    else if (component == 2) {
+        self.rows = 6;
     }
     else {
         self.rows = 1;
@@ -227,7 +249,7 @@ numberOfRowsInComponent:(NSInteger)component;{
    }
 
 - (IBAction)SaveButton:(UIButton *)sender {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (self.time.timeselected != 0){
     self.time.timeleft = self.time.timeselected;        //Sets the variable timeleft to the time selected when the save button is pressed
     }
@@ -235,11 +257,11 @@ numberOfRowsInComponent:(NSInteger)component;{
         self.time.timeleft = 120;
     }
     NSLog(@"time left = %.0f", self.time.timeleft);
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
     [defaults synchronize];
     
+    if (self.time.timeMole1 != 0){
+        
     [defaults setFloat:self.time.timeMole1 forKey:@"TimeMole1"];
     [defaults synchronize];
     [defaults setFloat:self.time.timeMole2 forKey:@"TimeMole2"];
@@ -258,7 +280,27 @@ numberOfRowsInComponent:(NSInteger)component;{
     [defaults synchronize];
     [defaults setFloat:self.time.timeMole9 forKey:@"TimeMole9"];
     [defaults synchronize];
-
+    }
+    else {
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole1"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole2"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole3"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole4"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole5"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole6"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole7"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole8"];
+    [defaults synchronize];
+    [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole9"];
+    [defaults synchronize];
+    }
 }
 
 - (IBAction)BackToStart:(UIButton *)sender {

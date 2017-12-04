@@ -14,10 +14,33 @@
 {
     self = [super init];
     if (self) {
-        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         //self.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
         //self.timeMoleShowed = 4;
         self.gamescreen = [[GameScreenViewController alloc] init];
+        
+        //[defaults setInteger:120 forKey:@"TimeLeft"];
+        [defaults synchronize];
+        
+        /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole1"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole2"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole3"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole4"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole5"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole6"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole7"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole8"];
+        [defaults synchronize];
+        [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole9"];
+        [defaults synchronize];*/
         
     }
     return self;
