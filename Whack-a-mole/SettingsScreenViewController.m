@@ -112,10 +112,28 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal Button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard Button
     
-    self.time.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole1Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole2Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole3Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole4Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole5Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole6Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole7Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole8Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    self.time.timeMole9Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
+    
+    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
+    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
     
     
-    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole1Showed);
 
 }
 
@@ -125,9 +143,27 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = false;    //Shows the tick next to the Normal button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard button
     
-    self.time.timeMole = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole1Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole2Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole3Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole4Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole5Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole6Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole7Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole8Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
+    self.time.timeMole9Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
+    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
+    
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole1Showed);
 
 }
 
@@ -137,9 +173,28 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal button
     self.TickHardImage.hidden = false;      //Shows the tick next to the Hard button
     
-    self.time.timeMole = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole1Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole2Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole3Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole4Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole5Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole6Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole7Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole8Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
+    self.time.timeMole9Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.2f", self.time.timeMole);
+    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
+
+    
+    NSLog(@"time selected for Mole = %.2f", self.time.timeMole1Showed);
     
    }
 
@@ -155,13 +210,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
-    [defaults synchronize];
     
-    self.game.TimeMoleSet = self.time.timeMole;
-    
-    NSLog(@"time set for Mole = %.2f", self.game.TimeMoleSet);
-    
-    [defaults setInteger:self.game.TimeMoleSet forKey:@"TimeMoleSet"];
+    [defaults setInteger:self.time.timeMole1Showed forKey:@"TimeMole1s"];
+    [defaults setInteger:self.time.timeMole1Hidden forKey:@"TimeMole1h"];
     [defaults synchronize];
 
 }

@@ -51,6 +51,6 @@
 @property (strong, nonatomic) TimeDataClass *time1;             //call the class TimeDataClass
 @property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
 
--(void) HideMole;
+-(void) Mole1;
 @end
 

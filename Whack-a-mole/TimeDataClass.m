@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        self.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
+        //self.timeMole = ((arc4random_uniform(110) + 250.0f)/100.0f);
         //self.timeMoleShowed = 4;
         self.gamescreen = [[GameScreenViewController alloc] init];
         
@@ -23,6 +23,16 @@
     return self;
 }
 
+/*- (void) startMoles {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.gamescreen.TimeMoleSet = [defaults integerForKey:@"TimeMoleSet"];
+    self.timeleft = [defaults integerForKey:@"TimeLeft"];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.gamescreen.TimeMoleSet target:self selector:@selector(Mole1) userInfo:nil repeats:YES];
+}
+
+-(void) Mole1 {
+    [self.gamescreen Mole1];
+}*/
 - (void) startTimer {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
