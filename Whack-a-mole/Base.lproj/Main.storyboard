@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -21,29 +21,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-cy-h11">
-                                <state key="normal" title="Start"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="FQC-Xg-ESK"/>
+                                    <constraint firstAttribute="height" constant="50" id="apM-29-SD4"/>
+                                </constraints>
+                                <state key="normal" title="Start" backgroundImage="selectionbox.png"/>
                                 <connections>
                                     <action selector="GameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QzC-Rx-ApQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-ki-rj0">
-                                <state key="normal" title="Settings"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="7HX-La-wPX"/>
+                                    <constraint firstAttribute="height" constant="50" id="vF2-Fn-jHh"/>
+                                </constraints>
+                                <state key="normal" title="Settings" backgroundImage="selectionbox.png"/>
                                 <connections>
                                     <action selector="SettingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cew-hX-lUA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-uh-B3t">
                                 <attributedString key="attributedText">
-                                    <fragment content="Whack-A-Mole">
+                                    <fragment content="WHACK-A-MOLE">
                                         <attributes>
                                             <color key="NSColor" red="0.24487501959999999" green="0.71083630180000001" blue="0.1577597684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="30" name=".AppleSystemUIFont"/>
+                                            <font key="NSFont" size="45" name="MarkerFelt-Wide"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <color key="highlightedColor" red="0.19202479759999999" green="0.55741985100000002" blue="0.1237112207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="shadowColor" red="0.19202479759999999" green="0.55741985100000002" blue="0.1237112207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-VW-Omv">
+                                <attributedString key="attributedText">
+                                    <fragment content="Please select the time in Settings">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                         </subviews>
@@ -53,6 +74,8 @@
                             <constraint firstItem="XKx-cy-h11" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GXU-GB-Od3"/>
                             <constraint firstItem="ApV-uh-B3t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="GxS-tO-YmO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XKx-cy-h11" secondAttribute="bottom" constant="200" id="TDI-dO-KXJ"/>
+                            <constraint firstItem="pbs-VW-Omv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="250" id="b5i-ri-HgB"/>
+                            <constraint firstItem="pbs-VW-Omv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZs-UV-idB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gB5-ki-rj0" secondAttribute="bottom" constant="100" id="fQ2-M5-Kec"/>
                             <constraint firstItem="gB5-ki-rj0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pex-y9-rNH"/>
                         </constraints>
@@ -60,6 +83,7 @@
                     <navigationItem key="navigationItem" id="stc-Pz-Vib"/>
                     <connections>
                         <outlet property="GameName" destination="ApV-uh-B3t" id="xEG-9b-Jvr"/>
+                        <outlet property="SelectTime" destination="pbs-VW-Omv" id="bnI-Tl-eF4"/>
                         <segue destination="t9k-CI-cZH" kind="show" identifier="ShowGameScreen" id="ek3-NU-i02"/>
                         <segue destination="aEG-35-h61" kind="show" identifier="ShowSettingsScreen" id="tEB-uU-Ywr"/>
                     </connections>
@@ -225,14 +249,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-bC-vzc">
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-bC-vzc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GWb-Hs-leu"/>
+                                    <constraint firstAttribute="width" constant="50" id="zNe-Wd-3b8"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="mole.png" backgroundImage="Hole.png"/>
                                 <connections>
                                     <action selector="Mole1Pressed:" destination="t9k-CI-cZH" eventType="touchUpInside" id="UAp-Cw-aUz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-Xf-vua">
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-Xf-vua">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="QGu-v8-SZj"/>
+                                    <constraint firstAttribute="height" constant="50" id="Soi-Fz-2pD"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="mole.png"/>
                                 <connections>
                                     <action selector="Mole2Pressed:" destination="t9k-CI-cZH" eventType="touchUpInside" id="AD4-e1-BGp"/>
                                 </connections>
@@ -279,31 +311,52 @@
                                     <action selector="Mole9Pressed:" destination="t9k-CI-cZH" eventType="touchUpInside" id="KWc-WR-jfh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bx-0n-q9w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bx-0n-q9w">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bVc-ja-jaX"/>
+                                    <constraint firstAttribute="height" constant="54" id="PGh-cf-PVp"/>
+                                    <constraint firstAttribute="width" constant="120" id="YSd-Uo-HWr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Time Left =">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest Score =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-eZ-hvj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-eZ-hvj">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="AuY-Ty-YUd"/>
                                     <constraint firstAttribute="height" constant="40" id="sVS-Q3-ckt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Highest Score =">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO TIME LEFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-kG-1dT">
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-kG-1dT">
+                                <attributedString key="attributedText">
+                                    <fragment content="NO TIME LEFT">
+                                        <attributes>
+                                            <font key="NSFont" size="40" name="MarkerFelt-Thin"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-0m-xO1">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-0m-xO1">
+                                <attributedString key="attributedText">
+                                    <fragment content="Score =">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxj-Jw-bne">
@@ -369,9 +422,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Hole.png" width="74" height="39"/>
         <image name="check_mark_u2713_icon_256x256.png" width="256" height="256"/>
+        <image name="mole.png" width="191" height="186"/>
+        <image name="selectionbox.png" width="1011" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oAT-aK-rvm"/>
+        <segue reference="uW3-Hy-wTr"/>
     </inferredMetricsTieBreakers>
 </document>

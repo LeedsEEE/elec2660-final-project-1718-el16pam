@@ -25,8 +25,11 @@ int i;
     
     self.time1 = [[TimeDataClass alloc] init];
     //initialize time data class in the game screen view
+    self.music = [[Music alloc] init];
+    //initialize the music class in the game screen view
     self.score = [[ScoreDataClass alloc] init];
     //initialize score data class in the game screen view
+    
     
     self.Mole1Button.hidden = true;
     self.Mole2Button.hidden = true;
@@ -44,11 +47,20 @@ int i;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];
     self.time1.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];
+    self.time1.starttime = [defaults integerForKey:@"StartTime"];
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
+
+    NSLog(@"%.0f",self.time1.starttime);
+
     
     self.time1.timeMole1 = [defaults integerForKey:@"TimeMole1"];
     self.time1.timeMole2 = [defaults integerForKey:@"TimeMole2"];
-    
+    if (self.time1.timeleftseconds == 0 & self.time1.timeleftminute >= 0) {
+            self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:00", (long)self.time1.timeleftminute];
+        }
+    else{
     self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:%ld", (long)self.time1.timeleftminute, (long)self.time1.timeleftseconds];
+    }
     //display time set on the settings view
 
     self.score.highestscore = [defaults integerForKey:@"HighestScore"];
@@ -58,17 +70,18 @@ int i;
     
     
     [self startMole1];
-    [self startMole2];
+    [self startmole2];
     [self startMole3];
-    [self startMole4];
+    [self startmole4];
     [self startMole5];
     [self startMole6];
-    [self startMole7];
+    [self startmole7];
     [self startMole8];
-    [self startMole9];
+    [self startmole9];
     [self.time1 startTimer];
     [self changeLabels];
-    
+    [self background];
+
 }
 
 
@@ -92,7 +105,18 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(Mole1t) userInfo:nil repeats:YES];
     
 }*/
-
+-(void)startmole2{
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startMole2) userInfo:nil repeats:NO];
+}
+-(void)startmole4{
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(startMole4) userInfo:nil repeats:NO];
+}
+-(void)startmole7{
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(startMole7) userInfo:nil repeats:NO];
+}
+-(void)startmole9{
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(startMole9) userInfo:nil repeats:NO];
+}
 
 - (void) changeLabels {
     
@@ -101,21 +125,31 @@ int i;
     [defaults synchronize];
     [defaults setInteger:self.time1.timeleftseconds forKey:@"TimeLeftSeconds"];
     [defaults synchronize];
-    
+    [defaults setInteger:self.time1.timeleft forKey:@"TimeLeft"];
+    [defaults synchronize];
+    [defaults setInteger:self.time1.starttime forKey:@"StartTime"];
+    [defaults synchronize];
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeLeftLabel) userInfo:nil repeats:YES];
     
 }
 
 -(void) changeTimeLeftLabel {
+
+    self.time1.timeleft -=1;
+
+    
     if (self.time1.timeleftseconds >= 0 & self.time1.timeleftseconds < 10) {
         if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
         self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:0%ld", (long)self.time1.timeleftminute, (long)self.time1.timeleftseconds];
         }
     }
-    else {
-    if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
+    else if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
         self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:%ld", (long)self.time1.timeleftminute, (long)self.time1.timeleftseconds];
     }
+    if (self.time1.timeleftseconds == 0) {
+        if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
+            self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:00", (long)self.time1.timeleftminute];
+        }
     }
     if (self.time1.timeleftminute == 0 & self.time1.timeleftseconds == 0) {
         self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
@@ -132,11 +166,12 @@ int i;
     
 }
 - (void) startMole2 {
+    if (self.time1.timeleft == self.time1.starttime - 1) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole2 = [defaults floatForKey:@"TimeMole2"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole2 target:self selector:@selector(Mole2) userInfo:nil repeats:YES];
-    
+    }
 }
 - (void) startMole3 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -146,11 +181,12 @@ int i;
     
 }
 - (void) startMole4 {
+    if (self.time1.timeleft == self.time1.starttime - 3) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole4 = [defaults floatForKey:@"TimeMole4"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole4 target:self selector:@selector(Mole4) userInfo:nil repeats:YES];
-    
+    }
 }
 - (void) startMole5 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -167,11 +203,12 @@ int i;
     
 }
 - (void) startMole7 {
+    if (self.time1.timeleft == self.time1.starttime - 2) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole7 = [defaults floatForKey:@"TimeMole7"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole7 target:self selector:@selector(Mole7) userInfo:nil repeats:YES];
-    
+    }
 }
 - (void) startMole8 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -181,11 +218,12 @@ int i;
     
 }
 - (void) startMole9 {
+    if (self.time1.timeleft == self.time1.starttime - 4) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole9 = [defaults floatForKey:@"TimeMole9"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole9 target:self selector:@selector(Mole9) userInfo:nil repeats:YES];
-    
+    }
 }
 -(void) Mole1 {
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
@@ -326,6 +364,8 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole1Button.hidden = true;                                                                 //hides the button
         
+        [self.music MoleWhack];
+        
     }
     
     [self.score HighestScore];
@@ -341,6 +381,8 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole2Button.hidden = true;                                                                 //hides the button
         
+        [self.music MoleWhack];
+        
     }
     
     [self.score HighestScore];
@@ -354,6 +396,8 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole3Button.hidden = true;                                                                 //hides the button
     
+        [self.music MoleWhack];
+        
     }
     
     [self.score HighestScore];
@@ -367,6 +411,8 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole4Button.hidden = true;                                                                 //hides the button
         
+        [self.music MoleWhack];
+    
     }
     
     [self.score HighestScore];
@@ -379,7 +425,9 @@ int i;
     self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole5Button.hidden = true;                                                                 //hides the button
-    
+        
+        [self.music MoleWhack];
+
     }
     
     [self.score HighestScore];
@@ -392,7 +440,9 @@ int i;
     self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole6Button.hidden = true;                                                                 //hides the button
-       
+        
+        [self.music MoleWhack];
+   
     }
     
     [self.score HighestScore];
@@ -405,7 +455,9 @@ int i;
     self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole7Button.hidden = true;                                                                 //hides the button
-      
+        
+        [self.music MoleWhack];
+  
     }
     
     [self.score HighestScore];
@@ -418,7 +470,9 @@ int i;
     self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole8Button.hidden = true;                                                                 //hides the button
-    
+        
+        [self.music MoleWhack];
+
     }
     
     [self.score HighestScore];
@@ -432,6 +486,8 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole9Button.hidden = true;                                                                 //hides the button
     
+        [self.music MoleWhack];
+        
     }
     
     [self.score HighestScore];
@@ -440,6 +496,15 @@ int i;
 - (IBAction)BackToStart:(UIButton *)sender {
     
     [self performSegueWithIdentifier:@"BackFromGameScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    
+}
+
+-(void) background {
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"Background_apppremoles.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
     
 }
 @end

@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "GameScreenViewController.h"
+#import "TimeDataClass.h"
+#import "SettingsScreenViewController.h"
+
 
 @interface HomeScreenViewController : UIViewController
+
+@property (strong,nonatomic) TimeDataClass *time;
 
 #pragma mark properties
 
 @property (weak, nonatomic) IBOutlet UILabel *GameName;
+@property (weak, nonatomic) IBOutlet UILabel *SelectTime;
 
 #pragma mark actions
 
@@ -22,6 +28,7 @@
 
 //@property (strong, nonatomic) GameScreenViewController *gamescreen;
 
+-(void) background;
 
 @end
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TimeDataClass.h"
 #import "GameScreenViewController.h"
+@class GameScreenViewController;
 
 @interface SettingsScreenViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 

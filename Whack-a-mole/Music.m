@@ -10,4 +10,12 @@
 
 @implementation Music
 
+-(void) MoleWhack {
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"whack1" ofType:@"wav"];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
+    self.whack = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
+    [self.whack play];
+    
+}
+
 @end

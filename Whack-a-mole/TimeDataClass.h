@@ -20,6 +20,8 @@
 @property float timeleftseconds;
 @property float timeselected;
 @property int timeRemaining;
+@property float starttime;
+@property float timeleft;
 
 /*@property float timeMole1Hidden;
 @property float timeMole2Hidden;

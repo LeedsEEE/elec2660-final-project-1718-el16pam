@@ -9,7 +9,6 @@
 //To learn how to use NSUserDefaults i used the following link http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
 
 #import "HomeScreenViewController.h"
-#import "SettingsScreenViewController.h"
 
 @interface HomeScreenViewController ()
 
@@ -18,19 +17,16 @@
 @implementation HomeScreenViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
- //   self.gamescreen = [[GameScreenViewController alloc] init];
- //   self.time1 = [[TimeDataClass alloc] init];
 
+    self.time = [[TimeDataClass alloc] init];
+    self.SelectTime.hidden = true;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    //[defaults setInteger:120 forKey:@"TimeLeft"];
-    [defaults synchronize];
-
-    
-    
-    
+    self.time.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];
+    self.time.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];
+ 
+    [self background];
 }
 
 
@@ -49,9 +45,24 @@
 
 - (IBAction)GameButtonPressed:(UIButton *)sender {
     
+    if (self.time.timeleftminute != 0 | self.time.timeleftseconds != 0) {
+    
     [self performSegueWithIdentifier:@"ShowGameScreen" sender:self];                                            //When settings button is pressed it will take you to the GameScreenViewController
     // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
   //  self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.time1.timeselected];
+    }
+    else {
+        self.SelectTime.hidden = false;
+    }
     
+}
+
+-(void) background {
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"Background_apppremoles.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
+
 }
 @end

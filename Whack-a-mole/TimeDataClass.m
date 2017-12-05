@@ -63,13 +63,16 @@
     [defaults synchronize];
     [defaults setInteger:self.timeleftseconds forKey:@"TimeLeftSeconds"];
     [defaults synchronize];
+    [defaults setInteger:self.timeleft forKey:@"TimeLeft"];
+    [defaults synchronize];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(fireTimer) userInfo:nil repeats:YES];
     
 }
 
 -(void) fireTimer {
+
     if (self.timeleftminute != 0 | self.timeleftseconds != 0) {
-        if (self.timeleftseconds != 0) {
+                if (self.timeleftseconds != 0) {
             self.timeleftseconds -= 1;
             /*if (self.timeleft/5.0 == floorf(self.timeleft/5.0)) { //https://stackoverflow.com/questions/20018819/check-if-float-value-is-integer
              NSLog(@"time left = %.0f", self.timeleft)

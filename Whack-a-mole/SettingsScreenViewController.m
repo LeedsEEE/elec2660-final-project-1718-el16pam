@@ -35,6 +35,7 @@
     self.TickNormalImage.hidden = true;
     self.TickHardImage.hidden = true;
 
+    [self background];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,8 +170,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole9 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     
     
-    NSLog(@"time selected for Mole = %.2f", self.time.timeMole1);
-          }
+    NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
+    NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
+}
 - (IBAction)NormalButtonPressed:(UIButton *)sender {
     
     self.TickEasyImage.hidden = true;       //Hides the tick next to the Easy button
@@ -207,8 +209,8 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     
-    NSLog(@"time selected for Mole = %.2f", self.time.timeMole1);
-
+    NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
+    NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
 }
 
 - (IBAction)HardButtonPressed:(UIButton *)sender {
@@ -257,14 +259,22 @@ numberOfRowsInComponent:(NSInteger)component;{
     if (self.time.timeselected != 0){
     self.time.timeleftminute = self.time.minute;        //Sets the variable timeleft to the time selected when the save button is pressed
     self.time.timeleftseconds = self.time.seconds;
+    self.time.starttime = self.time.timeselected;
+    self.time.timeleft = self.time.timeselected;
     }
     else {
         self.time.timeleftminute = 1;
+        self.time.starttime = 60;
+        self.time.timeleft = 60;
     }
     NSLog(@"Time = %li:%ld", (long)self.time.minute, (long)self.time.seconds);
     [defaults setInteger:self.time.timeleftminute forKey:@"TimeLeftMinute"];
     [defaults synchronize];
     [defaults setInteger:self.time.timeleftseconds forKey:@"TimeLeftSeconds"];
+    [defaults synchronize];
+    [defaults setInteger:self.time.starttime forKey:@"StartTime"];
+    [defaults synchronize];
+    [defaults setInteger:self.time.timeleft forKey:@"TimeLeft"];
     [defaults synchronize];
     
     if (self.time.timeMole1 != 0){
@@ -313,6 +323,15 @@ numberOfRowsInComponent:(NSInteger)component;{
 - (IBAction)BackToStart:(UIButton *)sender {
     
     [self performSegueWithIdentifier:@"BackFromSettingsScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    
+}
+
+-(void) background {
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"Background_app.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
     
 }
 @end

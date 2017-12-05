@@ -12,6 +12,8 @@
 #import "TimeDataClass.h"
 @class TimeDataClass;
 #import "ScoreDataClass.h"
+#import "Music.h"
+
 
 @interface GameScreenViewController : UIViewController
 
@@ -50,6 +52,9 @@
 
 @property (strong, nonatomic) TimeDataClass *time1;             //call the class TimeDataClass
 @property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
+@property (strong, nonatomic) Music *music;             //call the class Music
+
+
 
 -(void) Mole1;
 @end

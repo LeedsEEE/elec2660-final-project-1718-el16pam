@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface Music : NSObject
+
+@property (strong, nonatomic) AVAudioPlayer *whack;
+
+-(void) MoleWhack;
 
 @end
