@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -20,22 +20,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-cy-h11">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-cy-h11">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="FQC-Xg-ESK"/>
-                                    <constraint firstAttribute="height" constant="50" id="apM-29-SD4"/>
+                                    <constraint firstAttribute="height" constant="40" id="apM-29-SD4"/>
                                 </constraints>
-                                <state key="normal" title="Start" backgroundImage="selectionbox.png"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="selectionbox.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Start">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="GameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QzC-Rx-ApQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-ki-rj0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB5-ki-rj0">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="7HX-La-wPX"/>
-                                    <constraint firstAttribute="height" constant="50" id="vF2-Fn-jHh"/>
+                                    <constraint firstAttribute="width" constant="100" id="7HX-La-wPX"/>
+                                    <constraint firstAttribute="height" constant="40" id="vF2-Fn-jHh"/>
                                 </constraints>
-                                <state key="normal" title="Settings" backgroundImage="selectionbox.png"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="selectionbox.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Settings">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="SettingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cew-hX-lUA"/>
                                 </connections>
@@ -109,9 +129,14 @@
                                     <constraint firstAttribute="width" constant="200" id="xSe-DN-SAQ"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-aE-ajh">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-aE-ajh">
+                                <attributedString key="attributedText">
+                                    <fragment content="Time">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1J-g0-MXs">
@@ -120,19 +145,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-EG-w0S">
-                                <state key="normal" title="Easy"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="J0Z-Nr-Fnv"/>
+                                    <constraint firstAttribute="height" constant="40" id="p0O-8b-jee"/>
+                                </constraints>
+                                <state key="normal" title="Easy" backgroundImage="selectionbox.png"/>
                                 <connections>
                                     <action selector="EasyButtonPressed:" destination="aEG-35-h61" eventType="touchUpInside" id="bU6-mk-PQw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyD-Wj-goG">
-                                <state key="normal" title="Normal"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyD-Wj-goG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i2I-5K-IQf"/>
+                                    <constraint firstAttribute="width" constant="100" id="we8-uD-6Bd"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="selectionbox.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Normal">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="NormalButtonPressed:" destination="aEG-35-h61" eventType="touchUpInside" id="Rv2-Kb-4aD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKb-nV-hvd">
-                                <state key="normal" title="Hard"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eFl-pw-hIM"/>
+                                    <constraint firstAttribute="width" constant="100" id="zJS-iN-VfT"/>
+                                </constraints>
+                                <state key="normal" title="Hard" backgroundImage="selectionbox.png"/>
                                 <connections>
                                     <action selector="HardButtonPressed:" destination="aEG-35-h61" eventType="touchUpInside" id="Mc4-5v-h20"/>
                                 </connections>
@@ -151,8 +196,21 @@
                                     <constraint firstAttribute="width" constant="46" id="dn1-Yc-XD2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-Wk-CdF">
-                                <state key="normal" title="Save Settings"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-Wk-CdF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Bza-2b-uYv"/>
+                                    <constraint firstAttribute="width" constant="150" id="OjR-Wa-qSf"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="SaveButon.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save Settings">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="SaveButton:" destination="aEG-35-h61" eventType="touchUpInside" id="TQv-h0-V4O"/>
                                 </connections>
@@ -169,8 +227,22 @@
                                     <constraint firstAttribute="height" constant="44" id="fys-Rg-iqq"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Jf-0NT">
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Jf-0NT">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="G5r-eB-gXx"/>
+                                    <constraint firstAttribute="height" constant="45" id="opu-CI-Pnc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="BackButton.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Back">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="ArialRoundedMTBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="BackToStart:" destination="aEG-35-h61" eventType="touchUpInside" id="XEW-IG-7QR"/>
                                 </connections>
@@ -313,13 +385,12 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bx-0n-q9w">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="PGh-cf-PVp"/>
-                                    <constraint firstAttribute="width" constant="120" id="YSd-Uo-HWr"/>
+                                    <constraint firstAttribute="height" constant="40" id="fs2-Ge-uao"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Time Left =">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                            <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -333,7 +404,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Highest Score =">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                            <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -353,7 +424,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Score =">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="ArialMT"/>
+                                            <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -422,12 +493,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackButton.png" width="75" height="45"/>
         <image name="Hole.png" width="74" height="39"/>
+        <image name="SaveButon.png" width="1011" height="586"/>
         <image name="check_mark_u2713_icon_256x256.png" width="256" height="256"/>
         <image name="mole.png" width="191" height="186"/>
         <image name="selectionbox.png" width="1011" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uW3-Hy-wTr"/>
+        <segue reference="oAT-aK-rvm"/>
     </inferredMetricsTieBreakers>
 </document>
