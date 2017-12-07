@@ -14,8 +14,6 @@
 
 @interface HomeScreenViewController : UIViewController
 
-@property (strong,nonatomic) TimeDataClass *time;
-
 #pragma mark properties
 
 @property (weak, nonatomic) IBOutlet UILabel *GameName;
@@ -26,7 +24,12 @@
 - (IBAction)SettingButtonPressed:(UIButton *)sender;
 - (IBAction)GameButtonPressed:(UIButton *)sender;
 
+#pragma mark classes called
+
 //@property (strong, nonatomic) GameScreenViewController *gamescreen;
+@property (strong,nonatomic) TimeDataClass *time;
+
+#pragma mark methods
 
 -(void) background;
 
