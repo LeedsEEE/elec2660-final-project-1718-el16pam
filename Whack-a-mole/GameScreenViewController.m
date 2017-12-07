@@ -16,7 +16,7 @@
 @interface GameScreenViewController ()
 
 @end
-int i;  //?
+
 @implementation GameScreenViewController
 
     #pragma mark viewDidLoad
@@ -51,9 +51,6 @@ int i;  //?
 
     NSLog(@"start time = %.0f",self.time1.starttime);
 
-    
-    self.time1.timeMole1 = [defaults integerForKey:@"TimeMole1"];       //?
-    self.time1.timeMole2 = [defaults integerForKey:@"TimeMole2"];       //?
     if (self.time1.timeleftseconds == 0 & self.time1.timeleftminute >= 0) {     //if statement used to make sure the TimeLeftLabel displays the time, when the screen loads, as MINUTES:00 if the time is set as just minutes
             self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:00", (long)self.time1.timeleftminute];
         }
@@ -87,36 +84,6 @@ int i;  //?
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-/*- (void) startMole1 {
-    
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(Mole1t) userInfo:nil repeats:YES];
-    
-}*/
-
-//CHANGE POSITION
--(void)startmole2{      //When the method is called an NSTimer will run the method StartMole2 during 2 seconds
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startMole2) userInfo:nil repeats:NO];
-}
--(void)startmole4{      //When the method is called an NSTimer will run the method StartMole4 during 4 seconds
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(startMole4) userInfo:nil repeats:NO];
-}
--(void)startmole7{      //When the method is called an NSTimer will run the method StartMole7 during 3 seconds
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(startMole7) userInfo:nil repeats:NO];
-}
--(void)startmole9{      //When the method is called an NSTimer will run the method StartMole9 during 5 seconds
-    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(startMole9) userInfo:nil repeats:NO];
 }
 
 #pragma mark change labels methods
@@ -161,6 +128,19 @@ int i;  //?
 }
 
 #pragma mark Moles methods
+
+-(void)startmole2{      //When the method is called an NSTimer will run the method StartMole2 during 2 seconds
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startMole2) userInfo:nil repeats:NO];
+}
+-(void)startmole4{      //When the method is called an NSTimer will run the method StartMole4 during 4 seconds
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(startMole4) userInfo:nil repeats:NO];
+}
+-(void)startmole7{      //When the method is called an NSTimer will run the method StartMole7 during 3 seconds
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(startMole7) userInfo:nil repeats:NO];
+}
+-(void)startmole9{      //When the method is called an NSTimer will run the method StartMole9 during 5 seconds
+    self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(startMole9) userInfo:nil repeats:NO];
+}
 
 - (void) startMole1 {       //When the method is called an NSTimer will run the method Mole1 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -319,44 +299,6 @@ int i;  //?
         NSLog(@"Show Mole9");
         self.Mole9Button.hidden = false;
     }}}
-
-/*- (void) firemoles{
-   NSInteger Rand = arc4random() % 10;
-    
-}*/
-
-
-
-/*
--(void) HideMole:(NSTimer *)timer {         //set the time the mole will be hidden after pressed
-    
-        NSLog(@"Hide Mole");
-        self.Mole1Button.hidden = false;
-    
-    }*/
-
-/*-(void) ShowMole:(NSTimer *)timer {
-    if (self.Mole1Button.hidden == true) {
-        NSLog(@"Show Mole");
-        self.Mole1Button.hidden = false;
-    }
-//    NSLog(@"Hide Button");
-//    self.Mole1Button.hidden = true;
-}*/
-/*-(void) ShowMole:(NSTimer *)timer {
-    NSLog(@"Hide Button");
-    self.Mole1Button.hidden = false;
-}*/
-
-/*- (void) ShowHideMole {
-    for (int i = self.time.timeselected; i>0; i--) {
-        self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMole target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
-    }
-}*/
-
-/*for (int i = self.time.timeselected; i>0; i--) {
-    self.time.timer = [NSTimer scheduledTimerWithTimeInterval: self.time.timeMole target:self selector:@selector(HideMole:) userInfo:nil repeats:YES];
-}*/
 
 #pragma mark moles buttons
 

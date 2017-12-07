@@ -43,16 +43,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark PikerView Delegate Methods
 
 - (NSString *)pickerView:(UIPickerView *)pickerView     //Sets the number in each row equal to the row number
@@ -139,26 +129,6 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal Button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard Button
     
-    /*self.time.timeMole1Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole2Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole3Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole4Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole5Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole6Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole7Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole8Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    self.time.timeMole9Showed = ((arc4random_uniform(110) + 250.0f)/100.0f);
-    
-    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);
-    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 750.0f)/100.0f);*/
-    
     self.time.timeMole1 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole3 = ((arc4random_uniform(251) + 250.0f)/100.0f);
@@ -178,26 +148,6 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickEasyImage.hidden = true;       //Hides the tick next to the Easy button
     self.TickNormalImage.hidden = false;    //Shows the tick next to the Normal button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard button
-    
-    /*self.time.timeMole1Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole2Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole3Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole4Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole5Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole6Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole7Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole8Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    self.time.timeMole9Showed = ((arc4random_uniform(110) + 150.0f)/100.0f);
-    
-    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);
-    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 400.0f)/100.0f);*/
     
     self.time.timeMole1 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 150.0f)/100.0f);
@@ -219,26 +169,6 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal button
     self.TickHardImage.hidden = false;      //Shows the tick next to the Hard button
     
-   /* self.time.timeMole1Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole2Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole3Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole4Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole5Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole6Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole7Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole8Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    self.time.timeMole9Showed = ((arc4random_uniform(110) + 50.0f)/100.0f);
-    
-    self.time.timeMole1Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole2Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole3Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole4Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole5Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole6Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole7Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole8Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);
-    self.time.timeMole9Hidden = ((arc4random_uniform(501) + 100.0f)/100.0f);*/
-
     self.time.timeMole1 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole3 = ((arc4random_uniform(251) + 50.0f)/100.0f);
@@ -322,7 +252,7 @@ numberOfRowsInComponent:(NSInteger)component;{
 
 - (IBAction)BackToStart:(UIButton *)sender {
     
-    [self performSegueWithIdentifier:@"BackFromSettingsScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    [self performSegueWithIdentifier:@"BackFromSettingsScreen" sender:self];        //When Back button is pressed it will take you to the Main Screen
     
 }
 

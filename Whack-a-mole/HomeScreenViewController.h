@@ -25,7 +25,6 @@
 
 #pragma mark classes called
 
-//@property (strong, nonatomic) GameScreenViewController *gamescreen;
 @property (strong,nonatomic) TimeDataClass *time;
 
 #pragma mark methods

@@ -56,6 +56,6 @@
 
 #pragma mark methods
 
--(void) Mole1;
+//-(void) Mole1;
 @end
 

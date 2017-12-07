@@ -60,7 +60,7 @@
     
 }
 
-#pragama mark background
+#pragma mark background
 
 -(void) background {        //Method that will set the background image to Background_app.png + it will also autosize it to fill the sceen
     UIGraphicsBeginImageContext(self.view.frame.size);
