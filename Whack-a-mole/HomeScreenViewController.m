@@ -16,24 +16,27 @@
 
 @implementation HomeScreenViewController
 
+    #pragma mark viewDidLoad
+    
 - (void)viewDidLoad {
     
     [super viewDidLoad];
 
     self.time = [[TimeDataClass alloc] init];
-    self.SelectTime.hidden = true;
+    self.SelectTime.hidden = true;      //hides the label  SelectTime
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.time.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];
-    self.time.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];
+    self.time.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];      //sets the variable timeleftminutes to the value saved to the key @"TimeLeftMinute"
+    self.time.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];    //sets the variable timeleftseconds to the value saved to the key @"TimeLeftSeconds"
  
     [self background];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark actions
 
 - (IBAction)SettingButtonPressed:(UIButton *)sender {
     
@@ -52,10 +55,12 @@
   //  self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.time1.timeselected];
     }
     else {
-        self.SelectTime.hidden = false;
+        self.SelectTime.hidden = false;     //if the time is 0 the label SelectTime will show
     }
     
 }
+
+#pragama mark background
 
 -(void) background {
     UIGraphicsBeginImageContext(self.view.frame.size);
