@@ -17,22 +17,47 @@
         
         //sets the initial values
         self.currentscore = 0;
-        self.highestscore = 0;
+        self.highestscoreEasy = 0;
+        self.highestscoreNormal = 0;
+        self.highestscoreHard = 0;
         
     }
     return self;
 }
 
-- (void)HighestScore {
-    if (self.currentscore > self.highestscore) {
-        self.highestscore = self.currentscore;
+- (void)HighestScoreEasy {
+    if (self.currentscore > self.highestscoreEasy) {
+        self.highestscoreEasy = self.currentscore;
         
-        NSLog(@"hs = %li",(long)self.highestscore);
+        NSLog(@"hs = %li",(long)self.highestscoreEasy);
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setInteger:self.highestscore forKey:@"HighestScore"];
+        [defaults setInteger:self.highestscoreEasy forKey:@"HighestScoreEasy"];
         [defaults synchronize];
     }
-
+    
 }
+- (void)HighestScoreNormal {
+    if (self.currentscore > self.highestscoreNormal) {
+        self.highestscoreNormal = self.currentscore;
+        
+        NSLog(@"hs = %li",(long)self.highestscoreNormal);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:self.highestscoreNormal forKey:@"HighestScoreNormal"];
+        [defaults synchronize];
+    }
+    
+}
+- (void)HighestScoreHard {
+    if (self.currentscore > self.highestscoreHard) {
+        self.highestscoreHard = self.currentscore;
+        
+        NSLog(@"hs = %li",(long)self.highestscoreHard);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:self.highestscoreHard forKey:@"HighestScoreHard"];
+        [defaults synchronize];
+    }
+    
+}
+
 
 @end

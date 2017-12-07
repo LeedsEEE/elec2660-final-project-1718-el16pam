@@ -217,7 +217,7 @@
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9G-gD-bGz">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-EG-w0S">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-EG-w0S">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Rfy-EG-w0S" secondAttribute="height" multiplier="5:2" id="L3f-Jg-Fiy"/>
                                             <constraint firstAttribute="height" constant="40" id="yUX-BA-bmN"/>
@@ -276,13 +276,13 @@
                                     <action selector="HardButtonPressed:" destination="aEG-35-h61" eventType="touchUpInside" id="Mc4-5v-h20"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-yu-KC7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-yu-KC7">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="166-Xw-Aeh"/>
                                     <constraint firstAttribute="width" constant="46" id="bDV-cO-wtA"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-wz-ZMG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-wz-ZMG">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CtO-PD-Y0I"/>
                                     <constraint firstAttribute="width" constant="46" id="OjB-cp-tBJ"/>
@@ -307,7 +307,7 @@
                                     <action selector="SaveButton:" destination="aEG-35-h61" eventType="touchUpInside" id="TQv-h0-V4O"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_u2713_icon_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-vN-oJ8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-vN-oJ8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Us2-WH-hVd"/>
                                     <constraint firstAttribute="width" constant="46" id="zxT-mz-KPq"/>
@@ -449,7 +449,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="1lK-ZW-a0S">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="zoe-8g-tju"/>
+                                    <constraint firstAttribute="width" constant="120" id="iR0-e2-PJZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="vH5-gY-lRK"/>
@@ -612,9 +612,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0B-eZ-hvj">
                                 <attributedString key="attributedText">
-                                    <fragment content="Highest Score =">
+                                    <fragment content="Highest Score(Easy) = 0">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
+                                            <font key="NSFont" size="12" name="ArialRoundedMTBold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -632,7 +632,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-0m-xO1">
                                 <attributedString key="attributedText">
-                                    <fragment content="Score =">
+                                    <fragment content="Score = 0">
                                         <attributes>
                                             <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
                                         </attributes>
@@ -748,7 +748,6 @@
         <image name="Cloud.png" width="108" height="54"/>
         <image name="Hole.png" width="74" height="39"/>
         <image name="SaveButon.png" width="1011" height="586"/>
-        <image name="check_mark_u2713_icon_256x256.png" width="256" height="256"/>
         <image name="mole.png" width="191" height="186"/>
         <image name="selectionbox.png" width="1011" height="586"/>
     </resources>

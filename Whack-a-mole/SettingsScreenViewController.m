@@ -139,9 +139,12 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     
+    self.game.difficulty = @"Easy";
     
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
+    NSLog(@"%@", self.game.difficulty);
+
 }
 - (IBAction)NormalButtonPressed:(UIButton *)sender {
     
@@ -159,8 +162,12 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     
+    self.game.difficulty = @"Normal";
+
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
+    NSLog(@"%@", self.game.difficulty);
+    
 }
 
 - (IBAction)HardButtonPressed:(UIButton *)sender {
@@ -179,8 +186,11 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     
+    self.game.difficulty = @"Hard";
+
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
+    NSLog(@"%@", self.game.difficulty);
     
    }
 
@@ -227,6 +237,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     [defaults synchronize];
     [defaults setFloat:self.time.timeMole9 forKey:@"TimeMole9"];
     [defaults synchronize];
+    [defaults setObject:self.game.difficulty forKey:@"Difficulty"];
+    [defaults synchronize];
+
     }
     else {
     [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole1"];
@@ -247,6 +260,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     [defaults synchronize];
     [defaults setFloat:((arc4random_uniform(251) + 250.0f)/100.0f) forKey:@"TimeMole9"];
     [defaults synchronize];
+    [defaults setObject:@"Easy" forKey:@"Difficulty"];
+    [defaults synchronize];
+    
     }
 }
 

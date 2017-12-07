@@ -48,6 +48,8 @@
     self.time1.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];   //sets the value of the variable timeleftseconds to the value saved in the key @"TimeLeftSeconds"
     self.time1.starttime = [defaults integerForKey:@"StartTime"];               //sets the value of the variable starttime to the value saved in the key @"StartTime"
     self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];                 //sets the value of the variable timeleft to the value saved in the key @"TimeLeft"
+    self.difficulty = [defaults stringForKey:@"Difficulty"];
+
 
     NSLog(@"start time = %.0f",self.time1.starttime);
 
@@ -59,8 +61,19 @@
     }
     //display time set on the settings view
 
-    self.score.highestscore = [defaults integerForKey:@"HighestScore"];     //sets the value of the variable highestscore to the value saved on the key @¨HighestScore¨
-    self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];    //Displays the Highest Score
+    self.score.highestscoreEasy = [defaults integerForKey:@"HighestScoreEasy"];     //sets the value of the variable highestscore to the value saved on the key @¨HighestScore¨
+    self.score.highestscoreNormal = [defaults integerForKey:@"HighestScoreNormal"];     //sets the value of the variable highestscore to the value saved on the key @¨HighestScore¨
+    self.score.highestscoreHard = [defaults integerForKey:@"HighestScoreHard"];     //sets the value of the variable highestscore to the value saved on the key @¨HighestScore¨
+    
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Easy) = %li", (long)self.score.highestscoreEasy];
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Normal) = %li", (long)self.score.highestscoreNormal];
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Hard) = %li", (long)self.score.highestscoreHard];
+    }
     
     //self.time1.timeMole = [defaults integerForKey:@"timeMole"];
     
@@ -122,9 +135,24 @@
         }
     }
     if (self.time1.timeleftminute == 0 & self.time1.timeleftseconds == 0) {     //When the time is 0 the Highest score will be displayed.
-        self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
-        self.NoTimeLeftLabel.hidden = false;        //shows the NoTimeLeftLabel
+        if ([self.difficulty isEqualToString:@"Easy"]) {
+            self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Easy) = %li", (long)self.score.highestscoreEasy];
+            self.NoTimeLeftLabel.hidden = false;        //shows the NoTimeLeftLabel
+            NSLog(@"%li", (long)self.score.highestscoreEasy);
+        }
+        else if ([self.difficulty isEqualToString:@"Normal"]) {
+            self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Normal) = %li", (long)self.score.highestscoreNormal];
+            self.NoTimeLeftLabel.hidden = false;        //shows the NoTimeLeftLabel
+            NSLog(@"%li", (long)self.score.highestscoreNormal);
+        }
+        else if ([self.difficulty isEqualToString:@"Hard"]) {
+            self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Hard) = %li", (long)self.score.highestscoreHard];
+            self.NoTimeLeftLabel.hidden = false;        //shows the NoTimeLeftLabel
+            NSLog(@"%li", (long)self.score.highestscoreHard);
+        }
+        
     }
+    
 }
 
 #pragma mark Moles methods
@@ -232,71 +260,57 @@
 -(void) Mole3 {     //When the method is called an the outlet Mole3Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole3Button.hidden == false){
-        NSLog(@"Hide Mole3");
         self.Mole3Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole3");
         self.Mole3Button.hidden = false;
     }}}
 -(void) Mole4 {     //When the method is called an the outlet Mole4Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole4Button.hidden == false){
-        NSLog(@"Hide Mole4");
         self.Mole4Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole4");
         self.Mole4Button.hidden = false;
     }}}
 -(void) Mole5 {     //When the method is called an the outlet Mole5Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole5Button.hidden == false){
-        NSLog(@"Hide Mole5");
         self.Mole5Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole5");
         self.Mole5Button.hidden = false;
     }}}
 -(void) Mole6 {     //When the method is called an the outlet Mole6Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole6Button.hidden == false){
-        NSLog(@"Hide Mole6");
         self.Mole6Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole6");
         self.Mole6Button.hidden = false;
     }}}
 -(void) Mole7 {     //When the method is called an the outlet Mole7Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole7Button.hidden == false){
-        NSLog(@"Hide Mole7");
         self.Mole7Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole7");
         self.Mole7Button.hidden = false;
     }}}
 -(void) Mole8 {     //When the method is called an the outlet Mole8Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole8Button.hidden == false){
-        NSLog(@"Hide Mole8");
         self.Mole8Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole8");
         self.Mole8Button.hidden = false;
     }}}
 -(void) Mole9 {     //When the method is called an the outlet Mole9Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole9Button.hidden == false){
-        NSLog(@"Hide Mole9");
         self.Mole9Button.hidden = true;
     }
     else {
-        NSLog(@"Show Mole9");
         self.Mole9Button.hidden = false;
     }}}
 
@@ -314,8 +328,15 @@
         
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
-    
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
     
 }
 
@@ -331,7 +352,15 @@
         
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole3Pressed:(UIButton *)sender {
@@ -346,7 +375,15 @@
         
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole4Pressed:(UIButton *)sender {
@@ -361,7 +398,15 @@
     
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole5Pressed:(UIButton *)sender {
@@ -376,7 +421,15 @@
 
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole6Pressed:(UIButton *)sender {
@@ -391,7 +444,15 @@
    
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole7Pressed:(UIButton *)sender {
@@ -406,7 +467,15 @@
   
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole8Pressed:(UIButton *)sender {
@@ -421,7 +490,15 @@
 
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 - (IBAction)Mole9Pressed:(UIButton *)sender {
@@ -436,7 +513,15 @@
         
     }
     
-    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
+    if ([self.difficulty isEqualToString:@"Easy"]) {
+        [self.score HighestScoreEasy];                                                                          //calls the method HighestScoreEasy in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Normal"]) {
+        [self.score HighestScoreNormal];                                                                          //calls the method HighestScoreNormal in the score class
+    }
+    else if ([self.difficulty isEqualToString:@"Hard"]) {
+        [self.score HighestScoreHard];                                                                          //calls the method HighestScoreHard in the score class
+    }
 }
 
 #pragma mark Back button

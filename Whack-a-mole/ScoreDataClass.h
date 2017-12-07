@@ -14,7 +14,11 @@
 #pragma mark properties
 
 @property int currentscore;
-@property NSInteger highestscore;
+@property NSInteger highestscoreEasy;
+@property NSInteger highestscoreNormal;
+@property NSInteger highestscoreHard;
 
--(void) HighestScore;
+-(void) HighestScoreEasy;
+-(void) HighestScoreNormal;
+-(void) HighestScoreHard;
 @end
