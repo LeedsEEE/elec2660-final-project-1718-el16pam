@@ -11,7 +11,6 @@
 #import "TimeDataClass.h"
 #import "SettingsScreenViewController.h"
 
-
 @interface HomeScreenViewController : UIViewController
 
 #pragma mark properties
