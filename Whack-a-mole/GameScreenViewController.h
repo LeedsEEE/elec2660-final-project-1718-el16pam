@@ -8,9 +8,10 @@
 
 // find out about the @class name here https://stackoverflow.com/questions/31290769/two-class-access-each-other-by-importing-their-head-filevia-import-causes-er
 
+#pragma mark classes imported
 #import <UIKit/UIKit.h>
 #import "TimeDataClass.h"
-@class TimeDataClass;
+@class TimeDataClass;       //I added this because I import the GameScreenViewController in the TimeDataClass too
 #import "ScoreDataClass.h"
 #import "Music.h"
 
@@ -33,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *Mole8Button;
 @property (weak, nonatomic) IBOutlet UIButton *Mole9Button;
 
-@property float TimeMoleSet;                 //create a vaiable call difficulty
+@property float TimeMoleSet; //?
 
 #pragma mark actions
 
@@ -52,9 +53,9 @@
 
 @property (strong, nonatomic) TimeDataClass *time1;             //call the class TimeDataClass
 @property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
-@property (strong, nonatomic) Music *music;             //call the class Music
+@property (strong, nonatomic) Music *music;                     //call the class Music
 
-
+#pragma mark methods
 
 -(void) Mole1;
 @end
