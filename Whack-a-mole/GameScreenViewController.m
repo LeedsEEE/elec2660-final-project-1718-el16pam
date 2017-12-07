@@ -501,7 +501,7 @@ int i;
 
 -(void) background {
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"Background_apppremoles.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"Background_app.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview

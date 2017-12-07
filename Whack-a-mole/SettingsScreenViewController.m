@@ -60,7 +60,7 @@
             forComponent:(NSInteger)component;{
     NSString *number;
     if (component != 1) {
-        number = [NSString stringWithFormat:@"%ld", row];
+        number = [NSString stringWithFormat:@"%ld", (long)row];
     }
     else {
         number = [NSString stringWithFormat:@":"];

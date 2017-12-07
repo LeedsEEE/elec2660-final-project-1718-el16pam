@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +18,60 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background_app.png" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-RP-PSC"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHa-CQ-yWX">
+                                <attributedString key="attributedText">
+                                    <fragment content="WHACK-A-MOLE">
+                                        <attributes>
+                                            <color key="NSColor" red="0.24392923712730408" green="0.71245145797729492" blue="0.15864735841751099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="40" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.19215686274509802" green="0.55686274509803924" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.19215686269999999" green="0.5568627451" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hole.png" translatesAutoresizingMaskIntoConstraints="NO" id="604-wv-w7K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="JON-rb-Tt3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGD-hG-JpI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="WwP-0f-7KP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QHa-CQ-yWX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dst-nq-ja8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QHa-CQ-yWX" secondAttribute="bottom" constant="550" id="EJ2-I8-2TV"/>
+                            <constraint firstItem="604-wv-w7K" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="91" id="GX5-Nn-Pdk"/>
+                            <constraint firstItem="IGD-hG-JpI" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="Ini-13-Ugq"/>
+                            <constraint firstItem="eq1-RP-PSC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ST1-eT-cGH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="604-wv-w7K" secondAttribute="bottom" constant="147" id="Trv-cj-jCp"/>
+                            <constraint firstItem="604-wv-w7K" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="V77-hn-t2z"/>
+                            <constraint firstItem="QHa-CQ-yWX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="36" id="W3o-9l-FvH"/>
+                            <constraint firstItem="eq1-RP-PSC" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="aEP-LK-Moi"/>
+                            <constraint firstItem="eq1-RP-PSC" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="aI2-ZQ-PzU"/>
+                            <constraint firstItem="QHa-CQ-yWX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="50" id="fCD-Lf-wxk"/>
+                            <constraint firstItem="eq1-RP-PSC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hCt-MS-DNI"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="IGD-hG-JpI" secondAttribute="bottom" constant="158" id="mNY-l5-M8H"/>
+                            <constraint firstItem="IGD-hG-JpI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="83" id="mhA-fV-nJU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background_app.png" width="647" height="1052"/>
+        <image name="Hole.png" width="74" height="39"/>
+        <image name="mole.png" width="191" height="186"/>
+    </resources>
 </document>

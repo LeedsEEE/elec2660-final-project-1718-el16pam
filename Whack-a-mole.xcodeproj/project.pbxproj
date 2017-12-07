@@ -15,6 +15,10 @@
 		773C122E1FBB419F00FF77B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773C122C1FBB419F00FF77B9 /* LaunchScreen.storyboard */; };
 		773C12391FBB41A000FF77B9 /* Whack_a_moleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12381FBB41A000FF77B9 /* Whack_a_moleTests.m */; };
 		773C12441FBB41A000FF77B9 /* Whack_a_moleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 773C12431FBB41A000FF77B9 /* Whack_a_moleUITests.m */; };
+		77632D401FD85F15002F6CF9 /* mole.png in Resources */ = {isa = PBXBuildFile; fileRef = 77632D3F1FD85F15002F6CF9 /* mole.png */; };
+		77632D421FD86197002F6CF9 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 77632D411FD86197002F6CF9 /* BackButton.png */; };
+		77632D441FD8619B002F6CF9 /* Hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 77632D431FD8619B002F6CF9 /* Hole.png */; };
+		77632D461FD861A2002F6CF9 /* Cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 77632D451FD861A2002F6CF9 /* Cloud.png */; };
 		778B48F31FC30B0A00C2C8C7 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */; };
 		778B48F61FC30B2600C2C8C7 /* SettingsScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F51FC30B2600C2C8C7 /* SettingsScreenViewController.m */; };
 		778B48F91FC30CAE00C2C8C7 /* TimeDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 778B48F81FC30CAE00C2C8C7 /* TimeDataClass.m */; };
@@ -27,11 +31,7 @@
 		77C3FE3E1FD707E60028E866 /* whack1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE3D1FD707E60028E866 /* whack1.wav */; };
 		77C3FE401FD7143B0028E866 /* Background_apppremoles.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE3F1FD7143B0028E866 /* Background_apppremoles.png */; };
 		77C3FE421FD7268F0028E866 /* selectionbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE411FD7268F0028E866 /* selectionbox.png */; };
-		77C3FE491FD72A050028E866 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE431FD72A050028E866 /* BackButton.png */; };
 		77C3FE4A1FD72A050028E866 /* Background_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE441FD72A050028E866 /* Background_app.png */; };
-		77C3FE4B1FD72A050028E866 /* Cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE451FD72A050028E866 /* Cloud.png */; };
-		77C3FE4C1FD72A050028E866 /* Hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE461FD72A050028E866 /* Hole.png */; };
-		77C3FE4D1FD72A050028E866 /* mole.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE471FD72A050028E866 /* mole.png */; };
 		77C3FE4E1FD72A050028E866 /* SaveButon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C3FE481FD72A050028E866 /* SaveButon.png */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		773C121F1FBB419F00FF77B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		773C12211FBB419F00FF77B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		773C12221FBB419F00FF77B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		773C12241FBB419F00FF77B9 /* HomeScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		773C12241FBB419F00FF77B9 /* HomeScreenViewController.h */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
 		773C12251FBB419F00FF77B9 /* HomeScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
 		773C12281FBB419F00FF77B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		773C122A1FBB419F00FF77B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +69,10 @@
 		773C123F1FBB41A000FF77B9 /* Whack-a-moleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Whack-a-moleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		773C12431FBB41A000FF77B9 /* Whack_a_moleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whack_a_moleUITests.m; sourceTree = "<group>"; };
 		773C12451FBB41A000FF77B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77632D3F1FD85F15002F6CF9 /* mole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole.png; sourceTree = "<group>"; };
+		77632D411FD86197002F6CF9 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
+		77632D431FD8619B002F6CF9 /* Hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hole.png; sourceTree = "<group>"; };
+		77632D451FD861A2002F6CF9 /* Cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud.png; sourceTree = "<group>"; };
 		778B48F11FC30B0A00C2C8C7 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
 		778B48F21FC30B0A00C2C8C7 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		778B48F41FC30B2600C2C8C7 /* SettingsScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScreenViewController.h; sourceTree = "<group>"; };
@@ -86,11 +90,7 @@
 		77C3FE3D1FD707E60028E866 /* whack1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack1.wav; sourceTree = "<group>"; };
 		77C3FE3F1FD7143B0028E866 /* Background_apppremoles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_apppremoles.png; sourceTree = "<group>"; };
 		77C3FE411FD7268F0028E866 /* selectionbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionbox.png; sourceTree = "<group>"; };
-		77C3FE431FD72A050028E866 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
 		77C3FE441FD72A050028E866 /* Background_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_app.png; sourceTree = "<group>"; };
-		77C3FE451FD72A050028E866 /* Cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud.png; sourceTree = "<group>"; };
-		77C3FE461FD72A050028E866 /* Hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hole.png; sourceTree = "<group>"; };
-		77C3FE471FD72A050028E866 /* mole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole.png; sourceTree = "<group>"; };
 		77C3FE481FD72A050028E866 /* SaveButon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveButon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +166,12 @@
 				77C3FE3D1FD707E60028E866 /* whack1.wav */,
 				773C122F1FBB419F00FF77B9 /* Info.plist */,
 				77C3FE3F1FD7143B0028E866 /* Background_apppremoles.png */,
+				77632D411FD86197002F6CF9 /* BackButton.png */,
 				77C3FE411FD7268F0028E866 /* selectionbox.png */,
-				77C3FE431FD72A050028E866 /* BackButton.png */,
+				77632D451FD861A2002F6CF9 /* Cloud.png */,
+				77632D431FD8619B002F6CF9 /* Hole.png */,
 				77C3FE441FD72A050028E866 /* Background_app.png */,
-				77C3FE451FD72A050028E866 /* Cloud.png */,
-				77C3FE461FD72A050028E866 /* Hole.png */,
-				77C3FE471FD72A050028E866 /* mole.png */,
+				77632D3F1FD85F15002F6CF9 /* mole.png */,
 				77C3FE481FD72A050028E866 /* SaveButon.png */,
 				7796D95D1FC48CDD009CC8DB /* Images */,
 				773C121E1FBB419F00FF77B9 /* Supporting Files */,
@@ -321,16 +321,16 @@
 			files = (
 				77C3FE421FD7268F0028E866 /* selectionbox.png in Resources */,
 				7796D95E1FC48CDD009CC8DB /* Images in Resources */,
-				77C3FE491FD72A050028E866 /* BackButton.png in Resources */,
 				77C3FE4A1FD72A050028E866 /* Background_app.png in Resources */,
-				77C3FE4D1FD72A050028E866 /* mole.png in Resources */,
 				7796D9601FC48F73009CC8DB /* check_mark_u2713_icon_256x256.png in Resources */,
 				77C3FE3C1FD702B60028E866 /* whack.mp3 in Resources */,
 				77C3FE4E1FD72A050028E866 /* SaveButon.png in Resources */,
-				77C3FE4C1FD72A050028E866 /* Hole.png in Resources */,
 				77C3FE3E1FD707E60028E866 /* whack1.wav in Resources */,
-				77C3FE4B1FD72A050028E866 /* Cloud.png in Resources */,
+				77632D461FD861A2002F6CF9 /* Cloud.png in Resources */,
+				77632D441FD8619B002F6CF9 /* Hole.png in Resources */,
 				77C3FE401FD7143B0028E866 /* Background_apppremoles.png in Resources */,
+				77632D421FD86197002F6CF9 /* BackButton.png in Resources */,
+				77632D401FD85F15002F6CF9 /* mole.png in Resources */,
 				773C122E1FBB419F00FF77B9 /* LaunchScreen.storyboard in Resources */,
 				773C122B1FBB419F00FF77B9 /* Assets.xcassets in Resources */,
 				773C12291FBB419F00FF77B9 /* Main.storyboard in Resources */,
