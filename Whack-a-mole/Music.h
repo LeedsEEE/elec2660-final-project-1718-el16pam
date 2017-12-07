@@ -11,7 +11,11 @@
 
 @interface Music : NSObject
 
+#pragma mark AVAudioPlayer
+  
 @property (strong, nonatomic) AVAudioPlayer *whack;
+
+#pragma mark methods
 
 -(void) MoleWhack;
 
