@@ -16,19 +16,18 @@
 @interface GameScreenViewController ()
 
 @end
-int i;
+int i;  //?
 @implementation GameScreenViewController
 
+    #pragma mark viewDidLoad
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.time1 = [[TimeDataClass alloc] init];
-    //initialize time data class in the game screen view
-    self.music = [[Music alloc] init];
-    //initialize the music class in the game screen view
-    self.score = [[ScoreDataClass alloc] init];
-    //initialize score data class in the game screen view
+    self.time1 = [[TimeDataClass alloc] init];          //initialize time data class in the game screen view
+    self.music = [[Music alloc] init];                  //initialize the music class in the game screen view
+    self.score = [[ScoreDataClass alloc] init];         //initialize score data class in the game screen view
     
     
     self.Mole1Button.hidden = true;
@@ -40,22 +39,22 @@ int i;
     self.Mole7Button.hidden = true;
     self.Mole8Button.hidden = true;
     self.Mole9Button.hidden = true;
-    //set all 9 buttons to hidden
+    //hides all 9 ¨moles¨ buttons
     
-    self.NoTimeLeftLabel.hidden = true;
+    self.NoTimeLeftLabel.hidden = true;     //hides the NoTimeLeftLabel
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.time1.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];
-    self.time1.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];
-    self.time1.starttime = [defaults integerForKey:@"StartTime"];
-    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];
+    self.time1.timeleftminute = [defaults integerForKey:@"TimeLeftMinute"];     //sets the value of the variable timeleftminute to the value saved in the key @"TimeLeftMinute"
+    self.time1.timeleftseconds = [defaults integerForKey:@"TimeLeftSeconds"];   //sets the value of the variable timeleftseconds to the value saved in the key @"TimeLeftSeconds"
+    self.time1.starttime = [defaults integerForKey:@"StartTime"];               //sets the value of the variable starttime to the value saved in the key @"StartTime"
+    self.time1.timeleft = [defaults integerForKey:@"TimeLeft"];                 //sets the value of the variable timeleft to the value saved in the key @"TimeLeft"
 
-    NSLog(@"%.0f",self.time1.starttime);
+    NSLog(@"start time = %.0f",self.time1.starttime);
 
     
-    self.time1.timeMole1 = [defaults integerForKey:@"TimeMole1"];
-    self.time1.timeMole2 = [defaults integerForKey:@"TimeMole2"];
-    if (self.time1.timeleftseconds == 0 & self.time1.timeleftminute >= 0) {
+    self.time1.timeMole1 = [defaults integerForKey:@"TimeMole1"];       //?
+    self.time1.timeMole2 = [defaults integerForKey:@"TimeMole2"];       //?
+    if (self.time1.timeleftseconds == 0 & self.time1.timeleftminute >= 0) {     //if statement used to make sure the TimeLeftLabel displays the time, when the screen loads, as MINUTES:00 if the time is set as just minutes
             self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:00", (long)self.time1.timeleftminute];
         }
     else{
@@ -63,12 +62,12 @@ int i;
     }
     //display time set on the settings view
 
-    self.score.highestscore = [defaults integerForKey:@"HighestScore"];
-    self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
+    self.score.highestscore = [defaults integerForKey:@"HighestScore"];     //sets the value of the variable highestscore to the value saved on the key @¨HighestScore¨
+    self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];    //Displays the Highest Score
     
     //self.time1.timeMole = [defaults integerForKey:@"timeMole"];
     
-    
+    //starts the corresponding methods
     [self startMole1];
     [self startmole2];
     [self startMole3];
@@ -105,29 +104,33 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(Mole1t) userInfo:nil repeats:YES];
     
 }*/
--(void)startmole2{
+
+//CHANGE POSITION
+-(void)startmole2{      //When the method is called an NSTimer will run the method StartMole2 during 2 seconds
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startMole2) userInfo:nil repeats:NO];
 }
--(void)startmole4{
+-(void)startmole4{      //When the method is called an NSTimer will run the method StartMole4 during 4 seconds
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(startMole4) userInfo:nil repeats:NO];
 }
--(void)startmole7{
+-(void)startmole7{      //When the method is called an NSTimer will run the method StartMole7 during 3 seconds
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(startMole7) userInfo:nil repeats:NO];
 }
--(void)startmole9{
+-(void)startmole9{      //When the method is called an NSTimer will run the method StartMole9 during 5 seconds
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(startMole9) userInfo:nil repeats:NO];
 }
 
-- (void) changeLabels {
+#pragma mark change labels methods
+
+- (void) changeLabels {     //When the method is called an NSTimer will run the method ChangeTimeLeftLabel every second
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.time1.timeleftminute forKey:@"TimeLeftMinute"];
+    [defaults setInteger:self.time1.timeleftminute forKey:@"TimeLeftMinute"];       //sets the value of the variable timeleftminute to the value saved in the key @"TimeLeftMinute"
     [defaults synchronize];
-    [defaults setInteger:self.time1.timeleftseconds forKey:@"TimeLeftSeconds"];
+    [defaults setInteger:self.time1.timeleftseconds forKey:@"TimeLeftSeconds"];     //sets the value of the variable timeleftseconds to the value saved in the key @"TimeLeftSeconds"
     [defaults synchronize];
-    [defaults setInteger:self.time1.timeleft forKey:@"TimeLeft"];
+    [defaults setInteger:self.time1.timeleft forKey:@"TimeLeft"];                   //sets the value of the variable timeleft to the value saved in the key @"TimeLeft"
     [defaults synchronize];
-    [defaults setInteger:self.time1.starttime forKey:@"StartTime"];
+    [defaults setInteger:self.time1.starttime forKey:@"StartTime"];                 //sets the value of the variable starttime to the value saved in the key @"StarTime"
     [defaults synchronize];
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeLeftLabel) userInfo:nil repeats:YES];
     
@@ -135,10 +138,10 @@ int i;
 
 -(void) changeTimeLeftLabel {
 
-    self.time1.timeleft -=1;
+    self.time1.timeleft -= 1;       //self.time1.timeleft = self. time1.timeleft - 1
 
     
-    if (self.time1.timeleftseconds >= 0 & self.time1.timeleftseconds < 10) {
+    if (self.time1.timeleftseconds >= 0 & self.time1.timeleftseconds < 10) {    //if else if function that will display the time in a certain way depending on wether the variable timeleft seconds is between 0 and 10 or not
         if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
         self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:0%ld", (long)self.time1.timeleftminute, (long)self.time1.timeleftseconds];
         }
@@ -146,26 +149,27 @@ int i;
     else if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
         self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:%ld", (long)self.time1.timeleftminute, (long)self.time1.timeleftseconds];
     }
-    if (self.time1.timeleftseconds == 0) {
+    if (self.time1.timeleftseconds == 0) {      //if function that will display the time left in a certain way when th timeleftseconds variable is 0
         if (self.time1.timeleftseconds >= 0 | self.time1.timeleftminute >= 0) {
             self.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %li:00", (long)self.time1.timeleftminute];
         }
     }
-    if (self.time1.timeleftminute == 0 & self.time1.timeleftseconds == 0) {
+    if (self.time1.timeleftminute == 0 & self.time1.timeleftseconds == 0) {     //When the time is 0 the Highest score will be displayed.
         self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score = %li", (long)self.score.highestscore];
-        self.NoTimeLeftLabel.hidden = false;
+        self.NoTimeLeftLabel.hidden = false;        //shows the NoTimeLeftLabel
     }
 }
 
+#pragma mark Moles methods
 
-- (void) startMole1 {
+- (void) startMole1 {       //When the method is called an NSTimer will run the method Mole1 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole1 = [defaults floatForKey:@"TimeMole1"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole1 target:self selector:@selector(Mole1) userInfo:nil repeats:YES];
     
 }
-- (void) startMole2 {
+- (void) startMole2 {       //When the method is called an NSTimer will run the method Mole2 every certain time
     if (self.time1.timeleft == self.time1.starttime - 1) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole2 = [defaults floatForKey:@"TimeMole2"];
@@ -173,14 +177,14 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole2 target:self selector:@selector(Mole2) userInfo:nil repeats:YES];
     }
 }
-- (void) startMole3 {
+- (void) startMole3 {       //When the method is called an NSTimer will run the method Mole3 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole3 = [defaults floatForKey:@"TimeMole3"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole3 target:self selector:@selector(Mole3) userInfo:nil repeats:YES];
     
 }
-- (void) startMole4 {
+- (void) startMole4 {       //When the method is called an NSTimer will run the method Mole4 every certain time
     if (self.time1.timeleft == self.time1.starttime - 3) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole4 = [defaults floatForKey:@"TimeMole4"];
@@ -188,21 +192,21 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole4 target:self selector:@selector(Mole4) userInfo:nil repeats:YES];
     }
 }
-- (void) startMole5 {
+- (void) startMole5 {       //When the method is called an NSTimer will run the method Mole5 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole5 = [defaults floatForKey:@"TimeMole5"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole5 target:self selector:@selector(Mole5) userInfo:nil repeats:YES];
     
 }
-- (void) startMole6 {
+- (void) startMole6 {       //When the method is called an NSTimer will run the method Mole6 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole6 = [defaults floatForKey:@"TimeMole6"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole6 target:self selector:@selector(Mole6) userInfo:nil repeats:YES];
     
 }
-- (void) startMole7 {
+- (void) startMole7 {       //When the method is called an NSTimer will run the method Mole7 every certain time
     if (self.time1.timeleft == self.time1.starttime - 2) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole7 = [defaults floatForKey:@"TimeMole7"];
@@ -210,14 +214,14 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole7 target:self selector:@selector(Mole7) userInfo:nil repeats:YES];
     }
 }
-- (void) startMole8 {
+- (void) startMole8 {       //When the method is called an NSTimer will run the method Mole8 every certain time
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole8 = [defaults floatForKey:@"TimeMole8"];
     
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole8 target:self selector:@selector(Mole8) userInfo:nil repeats:YES];
     
 }
-- (void) startMole9 {
+- (void) startMole9 {       //When the method is called an NSTimer will run the method Mole9 every certain time
     if (self.time1.timeleft == self.time1.starttime - 4) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.time1.timeMole9 = [defaults floatForKey:@"TimeMole9"];
@@ -225,7 +229,7 @@ int i;
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:self.time1.timeMole9 target:self selector:@selector(Mole9) userInfo:nil repeats:YES];
     }
 }
--(void) Mole1 {
+-(void) Mole1 {     //When the method is called an the outlet Mole1Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole1Button.hidden == false){
         NSLog(@"Hide Mole1");
@@ -235,7 +239,7 @@ int i;
         NSLog(@"Show Mole1");
         self.Mole1Button.hidden = false;
     }}}
--(void) Mole2 {
+-(void) Mole2 {     //When the method is called an the outlet Mole2Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole2Button.hidden == false){
         NSLog(@"Hide Mole2");
@@ -245,7 +249,7 @@ int i;
         NSLog(@"Show Mole2");
         self.Mole2Button.hidden = false;
     }}}
--(void) Mole3 {
+-(void) Mole3 {     //When the method is called an the outlet Mole3Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole3Button.hidden == false){
         NSLog(@"Hide Mole3");
@@ -255,7 +259,7 @@ int i;
         NSLog(@"Show Mole3");
         self.Mole3Button.hidden = false;
     }}}
--(void) Mole4 {
+-(void) Mole4 {     //When the method is called an the outlet Mole4Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole4Button.hidden == false){
         NSLog(@"Hide Mole4");
@@ -265,7 +269,7 @@ int i;
         NSLog(@"Show Mole4");
         self.Mole4Button.hidden = false;
     }}}
--(void) Mole5 {
+-(void) Mole5 {     //When the method is called an the outlet Mole5Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole5Button.hidden == false){
         NSLog(@"Hide Mole5");
@@ -275,7 +279,7 @@ int i;
         NSLog(@"Show Mole5");
         self.Mole5Button.hidden = false;
     }}}
--(void) Mole6 {
+-(void) Mole6 {     //When the method is called an the outlet Mole6Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole6Button.hidden == false){
         NSLog(@"Hide Mole6");
@@ -285,7 +289,7 @@ int i;
         NSLog(@"Show Mole6");
         self.Mole6Button.hidden = false;
     }}}
--(void) Mole7 {
+-(void) Mole7 {     //When the method is called an the outlet Mole7Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole7Button.hidden == false){
         NSLog(@"Hide Mole7");
@@ -295,7 +299,7 @@ int i;
         NSLog(@"Show Mole7");
         self.Mole7Button.hidden = false;
     }}}
--(void) Mole8 {
+-(void) Mole8 {     //When the method is called an the outlet Mole8Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole8Button.hidden == false){
         NSLog(@"Hide Mole8");
@@ -305,7 +309,7 @@ int i;
         NSLog(@"Show Mole8");
         self.Mole8Button.hidden = false;
     }}}
--(void) Mole9 {
+-(void) Mole9 {     //When the method is called an the outlet Mole9Button will be hidden or showed depending on wether is already hidden or not
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
     if (self.Mole9Button.hidden == false){
         NSLog(@"Hide Mole9");
@@ -364,11 +368,11 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole1Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
         
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
     
     
 }
@@ -381,11 +385,11 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole2Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
         
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole3Pressed:(UIButton *)sender {
@@ -396,115 +400,121 @@ int i;
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole3Button.hidden = true;                                                                 //hides the button
     
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
         
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole4Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole4Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
     
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole5Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole5Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
 
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole6Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole6Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
    
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole7Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole7Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
   
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole8Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole8Button.hidden = true;                                                                 //hides the button
         
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
 
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
 
 - (IBAction)Mole9Pressed:(UIButton *)sender {
     
     if (self.time1.timeleftminute > 0 | self.time1.timeleftseconds > 0) {
 
-    self.score.currentscore += 1;                                                                   //increase current score if button pressed and showed
+    self.score.currentscore += 1;                                                                       //increase current score if button pressed and showed
         self.ScoreLabel.text = [NSString stringWithFormat:@"Score = %d", self.score.currentscore];      //updates the score label
         self.Mole9Button.hidden = true;                                                                 //hides the button
     
-        [self.music MoleWhack];
+        [self.music MoleWhack];                                                                         //calls the method MoleWhack in the music class
         
     }
     
-    [self.score HighestScore];
+    [self.score HighestScore];                                                                          //calls the method HighestScore in the score class
 }
+
+#pragma mark Back button
 
 - (IBAction)BackToStart:(UIButton *)sender {
     
-    [self performSegueWithIdentifier:@"BackFromGameScreen" sender:self];                                        //When Back button is pressed it will take you to the Main Screen
+    [self performSegueWithIdentifier:@"BackFromGameScreen" sender:self];                                //When Back button is pressed it will take you to the Main Screen
     
 }
 
--(void) background {
+#pragma mark background method
+
+-(void) background {        //Method that will set the background image to Background_app.png + it will also autosize it to fill the sceen
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"Background_app.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    //Learned how to do it using the following link https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
     
 }
 @end
