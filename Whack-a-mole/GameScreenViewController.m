@@ -124,13 +124,13 @@ int i;  //?
 - (void) changeLabels {     //When the method is called an NSTimer will run the method ChangeTimeLeftLabel every second
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.time1.timeleftminute forKey:@"TimeLeftMinute"];       //sets the value of the variable timeleftminute to the value saved in the key @"TimeLeftMinute"
+    [defaults setInteger:self.time1.timeleftminute forKey:@"TimeLeftMinute"];
     [defaults synchronize];
-    [defaults setInteger:self.time1.timeleftseconds forKey:@"TimeLeftSeconds"];     //sets the value of the variable timeleftseconds to the value saved in the key @"TimeLeftSeconds"
+    [defaults setInteger:self.time1.timeleftseconds forKey:@"TimeLeftSeconds"];
     [defaults synchronize];
-    [defaults setInteger:self.time1.timeleft forKey:@"TimeLeft"];                   //sets the value of the variable timeleft to the value saved in the key @"TimeLeft"
+    [defaults setInteger:self.time1.timeleft forKey:@"TimeLeft"];
     [defaults synchronize];
-    [defaults setInteger:self.time1.starttime forKey:@"StartTime"];                 //sets the value of the variable starttime to the value saved in the key @"StarTime"
+    [defaults setInteger:self.time1.starttime forKey:@"StartTime"];
     [defaults synchronize];
     self.time1.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeLeftLabel) userInfo:nil repeats:YES];
     
