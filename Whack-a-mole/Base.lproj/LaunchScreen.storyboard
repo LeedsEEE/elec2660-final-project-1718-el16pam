@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -20,6 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background_app.png" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-RP-PSC"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="0rD-SZ-HYU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="K21-F3-GdZ"/>
+                                    <constraint firstAttribute="height" constant="128" id="ose-vk-YZR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hole.png" translatesAutoresizingMaskIntoConstraints="NO" id="604-wv-w7K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="M7V-pM-AwH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGD-hG-JpI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="IM4-uz-eJL"/>
+                                    <constraint firstAttribute="height" constant="109" id="w3d-8R-FHD"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHa-CQ-yWX">
                                 <attributedString key="attributedText">
                                     <fragment content="WHACK-A-MOLE">
@@ -34,33 +51,25 @@
                                 <color key="shadowColor" red="0.19215686269999999" green="0.5568627451" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hole.png" translatesAutoresizingMaskIntoConstraints="NO" id="604-wv-w7K">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="JON-rb-Tt3"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mole.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGD-hG-JpI">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="WwP-0f-7KP"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0rD-SZ-HYU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-9" id="05O-Cn-G0F"/>
+                            <constraint firstItem="IGD-hG-JpI" firstAttribute="leading" secondItem="604-wv-w7K" secondAttribute="leading" id="BRM-gP-hWL"/>
                             <constraint firstItem="QHa-CQ-yWX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dst-nq-ja8"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QHa-CQ-yWX" secondAttribute="bottom" constant="550" id="EJ2-I8-2TV"/>
-                            <constraint firstItem="604-wv-w7K" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="91" id="GX5-Nn-Pdk"/>
-                            <constraint firstItem="IGD-hG-JpI" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="Ini-13-Ugq"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="IGD-hG-JpI" secondAttribute="bottom" constant="212" id="KPe-Ai-9qm"/>
+                            <constraint firstItem="IGD-hG-JpI" firstAttribute="trailing" secondItem="604-wv-w7K" secondAttribute="trailing" id="Nbt-k4-6Fl"/>
                             <constraint firstItem="eq1-RP-PSC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ST1-eT-cGH"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="604-wv-w7K" secondAttribute="bottom" constant="147" id="Trv-cj-jCp"/>
-                            <constraint firstItem="604-wv-w7K" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="V77-hn-t2z"/>
                             <constraint firstItem="QHa-CQ-yWX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="36" id="W3o-9l-FvH"/>
                             <constraint firstItem="eq1-RP-PSC" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="aEP-LK-Moi"/>
                             <constraint firstItem="eq1-RP-PSC" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="aI2-ZQ-PzU"/>
                             <constraint firstItem="QHa-CQ-yWX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="50" id="fCD-Lf-wxk"/>
                             <constraint firstItem="eq1-RP-PSC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hCt-MS-DNI"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="IGD-hG-JpI" secondAttribute="bottom" constant="158" id="mNY-l5-M8H"/>
-                            <constraint firstItem="IGD-hG-JpI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="83" id="mhA-fV-nJU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0rD-SZ-HYU" secondAttribute="trailing" constant="-6" id="hUi-es-jE4"/>
+                            <constraint firstItem="IGD-hG-JpI" firstAttribute="centerX" secondItem="QHa-CQ-yWX" secondAttribute="centerX" id="loO-ly-Yl6"/>
+                            <constraint firstItem="0rD-SZ-HYU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="50" id="m5I-Wn-D9E"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="604-wv-w7K" secondAttribute="bottom" constant="199" id="xHb-cT-EIT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -71,6 +80,7 @@
     </scenes>
     <resources>
         <image name="Background_app.png" width="647" height="1052"/>
+        <image name="Cloud.png" width="108" height="54"/>
         <image name="Hole.png" width="74" height="39"/>
         <image name="mole.png" width="191" height="186"/>
     </resources>
