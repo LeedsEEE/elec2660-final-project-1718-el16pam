@@ -10,7 +10,7 @@
 
 @implementation Music
 
--(void) MoleWhack {
+-(void) MoleWhack {     //When this method is called the sound from the file whack1.wav is played
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"whack1" ofType:@"wav"];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
     self.whack = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
