@@ -62,12 +62,14 @@
 
 #pragama mark background
 
--(void) background {
+-(void) background {        //Method that will set the background image to Background_app.png + it will also autosize it to fill the sceen
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"Background_app.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image]; //https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    //Learn how to do this using the following link https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
 
 }
 @end
