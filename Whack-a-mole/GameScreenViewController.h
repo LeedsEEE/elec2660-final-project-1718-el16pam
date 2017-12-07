@@ -15,7 +15,6 @@
 #import "ScoreDataClass.h"
 #import "Music.h"
 
-
 @interface GameScreenViewController : UIViewController
 
 #pragma mark properties
