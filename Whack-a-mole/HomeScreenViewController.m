@@ -41,7 +41,7 @@
 - (IBAction)SettingButtonPressed:(UIButton *)sender {
     
     [self performSegueWithIdentifier:@"ShowSettingsScreen" sender:self];                                        //When settings button is pressed it will take you to the SettingsScreenViewController
-    // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
+    //This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
     
 }
 
@@ -51,7 +51,7 @@
     if (self.time.timeleftminute != 0 | self.time.timeleftseconds != 0) {
     
     [self performSegueWithIdentifier:@"ShowGameScreen" sender:self];                                            //When settings button is pressed it will take you to the GameScreenViewController
-    // This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
+    //This is from https://stackoverflow.com/questions/34655473/how-to-open-new-view-controller-after-click-button
   //  self.gamescreen.TimeLeftLabel.text = [NSString stringWithFormat:@"Time Left = %.0f", self.time1.timeselected];
     }
     else {
