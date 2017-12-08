@@ -18,7 +18,10 @@
 @property NSInteger highestscoreNormal;
 @property NSInteger highestscoreHard;
 
+#pragma marks methods
+
 -(void) HighestScoreEasy;
 -(void) HighestScoreNormal;
 -(void) HighestScoreHard;
+
 @end

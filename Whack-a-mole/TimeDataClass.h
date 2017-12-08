@@ -14,34 +14,14 @@
 
 #pragma mark properties
 
-@property  NSInteger minute;                        //create a vaiable call ThirdSignificantFigure
-@property NSInteger seconds;
+@property  NSInteger minute;                        //create a vaiable call minute
+@property NSInteger seconds;                        //create a vaiable call seconds
 @property float timeleftminute;
 @property float timeleftseconds;
 @property float timeselected;
 @property int timeRemaining;
 @property float starttime;
 @property float timeleft;
-
-/*@property float timeMole1Hidden;
-@property float timeMole2Hidden;
-@property float timeMole3Hidden;
-@property float timeMole4Hidden;
-@property float timeMole5Hidden;
-@property float timeMole6Hidden;
-@property float timeMole7Hidden;
-@property float timeMole8Hidden;
-@property float timeMole9Hidden;
-
-@property float timeMole1Showed;
-@property float timeMole2Showed;
-@property float timeMole3Showed;
-@property float timeMole4Showed;
-@property float timeMole5Showed;
-@property float timeMole6Showed;
-@property float timeMole7Showed;
-@property float timeMole8Showed;
-@property float timeMole9Showed;*/
 
 @property float timeMole1;
 @property float timeMole2;
@@ -55,12 +35,12 @@
 
 @property (strong, nonatomic) NSTimer *timer;
 
+#pragma mark classes called
+
 @property (strong, nonatomic) GameScreenViewController *gamescreen;
 
-//@property (nonatomic) SettingsScreenViewController *ssvc;
+#pragma mark methods
 
 -(void) startTimer;
-//-(void) startMoles;
-
 
 @end

@@ -6,6 +6,8 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
+//To learn how to use NSTimer I used the following links https://stackoverflow.com/questions/13993945/make-a-button-visible-after-some-time-with-nstimer and https://stackoverflow.com/questions/5792804/making-a-function-wait-a-certain-amount-of-time-before-it-executes
+
 #import "TimeDataClass.h"
 
 @implementation TimeDataClass
@@ -21,6 +23,8 @@
     return self;
 }
 
+#pragma mark timer methods
+
 - (void) startTimer {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -30,7 +34,7 @@
     [defaults synchronize];
     [defaults setInteger:self.timeleft forKey:@"TimeLeft"];
     [defaults synchronize];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(fireTimer) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(fireTimer) userInfo:nil repeats:YES];//every second it will run the method fireTimer. Basically a countdown
     
 }
 
@@ -39,9 +43,6 @@
     if (self.timeleftminute != 0 | self.timeleftseconds != 0) {
                 if (self.timeleftseconds != 0) {
             self.timeleftseconds -= 1;
-            /*if (self.timeleft/5.0 == floorf(self.timeleft/5.0)) { //https://stackoverflow.com/questions/20018819/check-if-float-value-is-integer
-             NSLog(@"time left = %.0f", self.timeleft)
-             }*/
         }
         else if (self.timeleftseconds == 0){
             self.timeleftminute -= 1;

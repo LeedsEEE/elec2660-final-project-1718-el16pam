@@ -56,8 +56,5 @@
 @property (strong, nonatomic) ScoreDataClass *score;            //call the class ScoreDataClass
 @property (strong, nonatomic) Music *music;                     //call the class Music
 
-#pragma mark methods
-
-//-(void) Mole1;
 @end
 

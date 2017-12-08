@@ -6,6 +6,9 @@
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
+//I learned how to use AVAudioPlayer in the extra lab screencast
+
+//I got the sound from the following link http://soundbible.com/605-Wood-Whack.html
 #import "Music.h"
 
 @implementation Music

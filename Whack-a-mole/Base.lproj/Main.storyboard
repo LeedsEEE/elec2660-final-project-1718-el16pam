@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0lN-ym-5uF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -381,7 +381,7 @@
                             <constraint firstItem="GyD-Wj-goG" firstAttribute="trailing" secondItem="BKb-nV-hvd" secondAttribute="trailing" id="ZMk-KS-cuv"/>
                             <constraint firstItem="IKG-XK-etX" firstAttribute="top" secondItem="ciI-bi-wP6" secondAttribute="bottom" constant="62" id="ayI-5e-BMK"/>
                             <constraint firstItem="4tC-ax-0Vk" firstAttribute="top" secondItem="45x-j7-wJG" secondAttribute="bottom" constant="31" id="bIQ-ak-znw"/>
-                            <constraint firstAttribute="bottom" secondItem="e4d-Jf-0NT" secondAttribute="bottom" constant="20" symbolic="YES" id="dRY-d6-QgX"/>
+                            <constraint firstAttribute="bottom" secondItem="e4d-Jf-0NT" secondAttribute="bottom" constant="10" id="dRY-d6-QgX"/>
                             <constraint firstItem="p9G-gD-bGz" firstAttribute="centerY" secondItem="GyD-Wj-goG" secondAttribute="top" priority="250" constant="-30" id="ee8-Bc-VQw"/>
                             <constraint firstItem="p9G-gD-bGz" firstAttribute="leading" secondItem="1Gz-vN-oJ8" secondAttribute="trailing" constant="21" id="gNf-iA-MOB"/>
                             <constraint firstItem="p9G-gD-bGz" firstAttribute="centerX" secondItem="iyp-9L-u3r" secondAttribute="centerX" id="hYQ-2u-bHk"/>
@@ -695,7 +695,7 @@
                             <constraint firstItem="1lK-ZW-a0S" firstAttribute="top" secondItem="8JE-0m-xO1" secondAttribute="bottom" constant="-35" id="a0M-jv-Abl"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Ymw-zv-b0U" secondAttribute="bottom" constant="100" id="b1O-SZ-RCB"/>
                             <constraint firstItem="s9o-kG-1dT" firstAttribute="top" secondItem="zTf-xD-zts" secondAttribute="bottom" constant="150" id="c6R-6c-wCt"/>
-                            <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Nxj-Jw-bne" secondAttribute="bottom" constant="20" id="c6T-zs-mrT"/>
+                            <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="Nxj-Jw-bne" secondAttribute="bottom" constant="10" id="c6T-zs-mrT"/>
                             <constraint firstItem="v5g-tg-4pe" firstAttribute="top" secondItem="FgN-4s-bZa" secondAttribute="bottom" constant="100" id="cHc-70-bZo"/>
                             <constraint firstItem="8JE-0m-xO1" firstAttribute="top" secondItem="tIR-z7-Gjn" secondAttribute="bottom" constant="14" id="dXe-pY-tnr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2uI-NW-BVg" secondAttribute="trailing" constant="20" id="do3-st-1Q9"/>
@@ -752,6 +752,6 @@
         <image name="selectionbox.png" width="1011" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uW3-Hy-wTr"/>
+        <segue reference="oAT-aK-rvm"/>
     </inferredMetricsTieBreakers>
 </document>

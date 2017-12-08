@@ -16,6 +16,8 @@
 
 @implementation SettingsScreenViewController
 
+#pragma mark viewDidLoad
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,7 +27,7 @@
     self.TimePickerView.delegate = self;
     self.TimePickerView.dataSource = self;
     
-    self.time = [[TimeDataClass alloc] init];       //initialize time data class in the settings screen view
+    self.time = [[TimeDataClass alloc] init];                   //initialize time data class in the settings screen view
     self.game = [[GameScreenViewController alloc] init];        //initialize game screen view controller in the settings screen view
     
     [self.TimePickerView selectRow:1 inComponent:0 animated:YES];       //sets the the row in the first component
@@ -64,10 +66,11 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component;{
     
-    self.time.minute = [self.TimePickerView selectedRowInComponent:0];                       //Gets the third significant figure of the time from the picker
+    self.time.minute = [self.TimePickerView selectedRowInComponent:0];                  //Gets the third significant figure of the time from the picker
     self.FirstSignificantFigure = [self.TimePickerView selectedRowInComponent:2];       //Gets the first significant figure of the time from the picker
     self.SecondSignificantFigure = [self.TimePickerView selectedRowInComponent:3];      //Gets the second significant figure of the time from the picker
     
+    //if function that makes the maximum value for the time to be 5 minutes and the minimum to be 10 seconds
     if (self.time.minute == 5) {
         self.FirstSignificantFigure = 0;
         [self.TimePickerView selectRow:0 inComponent:2 animated:YES];
@@ -123,12 +126,15 @@ numberOfRowsInComponent:(NSInteger)component;{
 
 }
 
+#pragma mark difficulty buttons
+
 - (IBAction)EasyButtonPressed:(UIButton *)sender {
     
     self.TickEasyImage.hidden = false;      //Shows the tick next to the Easy button
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal Button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard Button
-    
+
+    //sets the time for the variables to be arandom number between 2.5 and 5 seconds
     self.time.timeMole1 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole3 = ((arc4random_uniform(251) + 250.0f)/100.0f);
@@ -139,7 +145,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 250.0f)/100.0f);
     
-    self.game.difficulty = @"Easy";
+    self.game.difficulty = @"Easy";     //sets the difficulty variable to "Easy"
     
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
@@ -152,6 +158,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = false;    //Shows the tick next to the Normal button
     self.TickHardImage.hidden = true;       //Hides the tick next to the Hard button
     
+    //sets the time for the variables to be arandom number between 1.5 and 4 seconds
     self.time.timeMole1 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole3 = ((arc4random_uniform(251) + 150.0f)/100.0f);
@@ -162,7 +169,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 150.0f)/100.0f);
     
-    self.game.difficulty = @"Normal";
+    self.game.difficulty = @"Normal";       //sets the difficulty variable to "Normal"
 
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
@@ -176,6 +183,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.TickNormalImage.hidden = true;     //Hides the tick next to the Normal button
     self.TickHardImage.hidden = false;      //Shows the tick next to the Hard button
     
+    //sets the time for the variables to be arandom number between 0.5 and 3 seconds
     self.time.timeMole1 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole2 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole3 = ((arc4random_uniform(251) + 50.0f)/100.0f);
@@ -186,7 +194,7 @@ numberOfRowsInComponent:(NSInteger)component;{
     self.time.timeMole8 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     self.time.timeMole9 = ((arc4random_uniform(251) + 50.0f)/100.0f);
     
-    self.game.difficulty = @"Hard";
+    self.game.difficulty = @"Hard";     //sets the difficulty variable to "Hard"
 
     NSLog(@"time selected for Mole1 = %.2f", self.time.timeMole1);
     NSLog(@"time selected for Mole2 = %.2f", self.time.timeMole2);
@@ -194,10 +202,13 @@ numberOfRowsInComponent:(NSInteger)component;{
     
    }
 
+#pragma mark save button + bact to start button
+
+//When the save button is pressed the value for all the variables will be saved using NSUserDefaults
 - (IBAction)SaveButton:(UIButton *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (self.time.timeselected != 0){
-    self.time.timeleftminute = self.time.minute;        //Sets the variable timeleft to the time selected when the save button is pressed
+    self.time.timeleftminute = self.time.minute;
     self.time.timeleftseconds = self.time.seconds;
     self.time.starttime = self.time.timeselected;
     self.time.timeleft = self.time.timeselected;
@@ -272,7 +283,9 @@ numberOfRowsInComponent:(NSInteger)component;{
     
 }
 
--(void) background {
+#pragma mark background
+
+-(void) background {//Method that will set the background image to Background_app.png + it will also autosize it to fill the sceen
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"Background_app.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

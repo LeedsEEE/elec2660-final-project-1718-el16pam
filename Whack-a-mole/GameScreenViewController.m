@@ -11,6 +11,8 @@
 
 //To learn how to use NSUserDefaults i used the following link http://www.ios-blog.co.uk/tutorials/objective-c/storing-data-with-nsuserdefaults/
 
+//I got the mole image from the following link https://play.google.com/store/apps/details?id=com.bwapps.barney.wackamole
+
 #import "GameScreenViewController.h"
 
 @interface GameScreenViewController ()
@@ -74,9 +76,7 @@
     else if ([self.difficulty isEqualToString:@"Hard"]) {
         self.HighestScoreLabel.text = [NSString stringWithFormat:@"Highest Score(Hard) = %li", (long)self.score.highestscoreHard];
     }
-    
-    //self.time1.timeMole = [defaults integerForKey:@"timeMole"];
-    
+        
     //starts the corresponding methods
     [self startMole1];
     [self startmole2];
@@ -541,7 +541,7 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    //Learned how to do it using the following link https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
+    //Learned how to do this using the following link https://stackoverflow.com/questions/8077740/how-to-fill-background-image-of-an-uiview
     
 }
 @end

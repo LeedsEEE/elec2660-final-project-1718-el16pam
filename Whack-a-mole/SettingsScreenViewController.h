@@ -19,14 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *TimePickerView;
 @property (weak, nonatomic) IBOutlet UILabel *TimeSelectedLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *TickEasyImage;
-// The image used was found in http://www.i2symbol.com/symbols/check/x2713-check-mark
 @property (weak, nonatomic) IBOutlet UIImageView *TickNormalImage;
-// The image used was found in http://www.i2symbol.com/symbols/check/x2713-check-mark
 @property (weak, nonatomic) IBOutlet UIImageView *TickHardImage;
-// The image used was found in http://www.i2symbol.com/symbols/check/x2713-check-mark
-@property NSInteger rows;                                           //create a vaiable call rows
-@property  NSInteger FirstSignificantFigure;                        //create a vaiable call FirstSignificantFigure
-@property  NSInteger SecondSignificantFigure;                       //create a vaiable call SecondSignifcantFigure
+@property NSInteger rows;                                           //create a variable call rows
+@property  NSInteger FirstSignificantFigure;                        //create a variable call FirstSignificantFigure
+@property  NSInteger SecondSignificantFigure;                       //create a variable call SecondSignifcantFigure
 
 #pragma mark actions
 
@@ -35,7 +32,6 @@
 - (IBAction)HardButtonPressed:(UIButton *)sender;
 - (IBAction)SaveButton:(UIButton *)sender;
 - (IBAction)BackToStart:(UIButton *)sender;
-//All the actions in my Screen View Controller
 
 #pragma mark classes called
 
